@@ -1,0 +1,56 @@
+@import "../../../color.scss";
+
+header {
+  width: 100%;
+  position: relative;
+  z-index: 999;
+}
+
+// Header
+.cinema__header {
+  overflow: visible !important;
+  background: $purple-gradient;
+  padding: 5px 60px;
+  .lnr {
+    font-size: 35px;
+    color: $white;
+  }
+  .center__navbar {
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .right__navbar {
+    a {
+      font-size: 10px;
+    }
+    .custom-select {
+      appearance: none;
+      background: url("../../../assets/img/arrow-down.svg") 90% / 10% no-repeat;
+      width: unset;
+      color: white;
+      border: none;
+      box-shadow: none;
+      position: relative;
+    }
+  }
+  .nav-item {
+    width: 100%;
+    text-align: right;
+    @media screen and (min-width: 768px) {
+      width: unset;
+    }
+
+    &:hover a {
+      color: $yellow-primary;
+    }
+    a {
+      color: $white;
+      justify-content: flex-end;
+      font-size: 20px;
+    }
+  }
+}
