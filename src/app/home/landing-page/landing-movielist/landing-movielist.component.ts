@@ -18,15 +18,15 @@ export class LandingMovielistComponent implements OnInit {
 
   movieList: any = [];
 
-  constructor(private phimService: QuanLyPhimService) {}
+  constructor(private dataService: QuanLyPhimService) {}
 
   ngOnInit() {
     this.getMovieList();
   }
   getMovieList() {
-    this.phimService.getListMovie().subscribe(data => {
+    const uri = this.dataService.get("QuanLyPhim/LayDanhSachPhim?maNhom=GP01");
+    uri.subscribe(data => {
       this.movieList = data;
-      this.movieList;
     });
   }
 }

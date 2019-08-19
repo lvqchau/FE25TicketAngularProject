@@ -61,15 +61,15 @@
   background-size: contain;
   top: 0;
   left: 0;
-  animation: flowing infinite 10000s linear;
+  animation: flowing infinite 300s linear;
   background: url("../assets/img/bg-fullwidth.png") repeat center center;
 }
 
 @keyframes flowing {
   from {
-    background-position: 0 -1000000px;
+    background-position: 0 -10000px;
   }
   to {
-    background-position: -1000000px 0;
+    background-position: -10000px 0;
   }
 }

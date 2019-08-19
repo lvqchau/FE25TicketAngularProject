@@ -1,3 +1,4 @@
+import { FormRoutingModule } from "./login-signup-routing.module";
 import { MaterialModule } from "./../_core/material/material.module";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -13,7 +14,7 @@ import { FbBtnComponent } from "./fb-btn/fb-btn.component";
     SignupComponent,
     FbBtnComponent
   ],
-  imports: [CommonModule, MaterialModule],
+  imports: [CommonModule, MaterialModule, FormRoutingModule],
   exports: [
     LoginSignupComponent,
     LoginComponent,

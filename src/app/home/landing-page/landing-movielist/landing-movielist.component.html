@@ -16,7 +16,7 @@
             #slickModal="slick-carousel" 
             [config]="slideMovieConfig">
             <div ngxSlickItem *ngFor="let movie of movieList">
-            <app-landing-movieitem [movieItem]="movie"></app-landing-movieitem>
+            <app-landing-movieitem [movie]="movie"></app-landing-movieitem>
             </div>
         </ngx-slick-carousel>
         </div>
@@ -25,7 +25,7 @@
             #slickModal2="slick-carousel" 
             [config]="slideMovieConfig">
             <div ngxSlickItem *ngFor="let movie of movieList">
-            <app-landing-movieitem [movieItem]="movie"></app-landing-movieitem>
+            <app-landing-movieitem [movie]="movie"></app-landing-movieitem>
             </div>
         </ngx-slick-carousel>
         </div>

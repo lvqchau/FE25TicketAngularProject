@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./landing-movieitem.component.scss"]
 })
 export class LandingMovieitemComponent implements OnInit {
-  @Input() movieItem;
+  @Input() movie;
   constructor() {}
 
   ngOnInit() {}

@@ -1,16 +1,21 @@
+import { environment } from "./../../../environments/environment";
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { tap, catchError } from "rxjs/operators";
+
+let urlApi = "";
+
 @Injectable({
   providedIn: "root"
 })
 export class QuanLyPhimService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    urlApi = environment.urlApi;
+  }
 
-  getListMovie(): Observable<any> {
-    const url = `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01`;
-    return this.http.get(url).pipe(
+  get(uri: string): Observable<any> {
+    return this.http.get(urlApi + "/" + uri).pipe(
       tap(() => {
         //splash
       }),

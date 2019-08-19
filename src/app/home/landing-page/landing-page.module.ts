@@ -1,3 +1,5 @@
+import { LandingRoutingModule } from "./landing-page-routing.module";
+import { RouterModule } from "@angular/router";
 import { MaterialModule } from "./../../_core/material/material.module";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -21,7 +23,13 @@ import { AppDisplayComponent } from "./app-display/app-display.component";
     SubscriptionComponent,
     AppDisplayComponent
   ],
-  imports: [CommonModule, SlickCarouselModule, MaterialModule],
+  imports: [
+    CommonModule,
+    SlickCarouselModule,
+    MaterialModule,
+    RouterModule,
+    LandingRoutingModule
+  ],
   exports: [
     LandingPageComponent,
     LandingCarouselComponent,

@@ -8,6 +8,7 @@ import { NewsPageModule } from "./news-page/news-page.module";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { MovieTicketboxComponent } from "./movie-ticketbox/movie-ticketbox.component";
+import { HomeRoutingModule } from "./home-routing.module";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MovieTicketboxComponent } from "./movie-ticketbox/movie-ticketbox.compo
     CinemaPageModule,
     LandingPageModule,
     MoviePageModule,
-    NewsPageModule
+    NewsPageModule,
+    HomeRoutingModule
   ],
   exports: [HomeComponent]
 })

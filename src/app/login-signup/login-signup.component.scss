@@ -18,7 +18,7 @@
 .login__container {
   width: 290px;
   height: 380px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   border-radius: 10px;
   position: relative;
   a {
@@ -31,5 +31,8 @@
     right: -10px;
     transform: rotate(45deg);
     font-size: 30px;
+  }
+  .lnr-logo {
+    font-size: 40px;
   }
 }
