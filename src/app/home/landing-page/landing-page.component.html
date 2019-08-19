@@ -1,35 +1,4 @@
-<!-- BEGIN CAROUSEL -->
-    <section id="demo" class="cinema__carousel carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-
-        <!-- The slideshow -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/img/banner/dieubamekhongke-banner.jpg" alt="Los Angeles">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/banner/fastfurious-banner.jpg" alt="Chicago">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/banner/lionking-banner.jpg" alt="New York">
-          </div>
-        </div>
-
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </a>
-
-    </section>
-    <!-- END CAROUSEL -->
+<app-landing-carousel></app-landing-carousel>
 
     <!-- BEGIN TICKETFORM -->
     <section class="cinema__ticketform">
@@ -98,239 +67,13 @@
       </div>
     </section>
     <!-- END TICKETFORM --> 
-    <!-- BEGIN MOVIE -->
-    <section class="cinema__movie">
-      <div class="movie__container">
-        <ul class="nav nav-pills">
-          <li class="nav-item current__movie">
-            <a class="nav-link active" data-toggle="pill" href="#now">Đang chiếu</a>
-          </li>
-          <li class="nav-item upcoming__movie">
-            <a class="nav-link" data-toggle="pill" href="#future">Sắp chiếu</a>
-          </li>
-        </ul>
 
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <div class="tab-pane active" id="now">
-            <ngx-slick-carousel class="carousel" 
-              #slickModal="slick-carousel" 
-              [config]="slideMovieConfig">
-              <div ngxSlickItem class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1641 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1642 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1643 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1644 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>165 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>166 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1647 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1648 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1649 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-            </ngx-slick-carousel>
-          </div>
-          <div class="tab-pane fade" id="future">
-            <ngx-slick-carousel class="carousel" 
-              #slickModal2="slick-carousel" 
-              [config]="slideMovieConfig">
-              <div ngxSlickItem class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1641 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1642 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1643 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1644 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>165 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>166 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1647 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1648 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-              <div ngxSlickItem  class="slide">
-                <div class="movie__img">
-                  <img src="assets/img/movies/ac-quy-trong-guong.jpg"/>
-                  <div class="overlay"><a href="#"><span class="lnr lnr-play2"></span></a></div>
-                </div>
-                <div class="movie__content">
-                  <h5>Người nhện xa nhà - Spider Man Far From Home (C16)</h5>
-                  <p>1649 phút - 8.2 IMDb</p>
-                  <button class="btn cinema__btn">MUA VÉ</button>
-                </div>
-              </div>
-            </ngx-slick-carousel>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END MOVIE -->
+    <!-- BEGIN MOVIELIST -->
+    <app-landing-movielist class="landing__movie"></app-landing-movielist>
+    <!-- END MOVIELIST -->
 
     <!-- BEGIN AD -->
-    <section class="cinema__ad">
-      <img style="width: 100%;"src="assets/img/quangcao39k.jpg">
-    </section>
+    <app-landing-ad class="landing__ad"></app-landing-ad>
     <!-- END AD -->
 
     <!-- BEGIN CINEMAFORM -->
@@ -1133,8 +876,14 @@
     </section>
     <!-- END CINEMAFORM -->
 
-    <!-- BEGIN AD2 -->
-    <section class="cinema__ad">
-      <img style="width: 100%;"src="assets/img/quangcao39k.jpg">
-    </section>
-    <!-- END AD2 -->
+    <!-- BEGIN AD -->
+    <app-landing-ad class="landing__ad"></app-landing-ad>
+    <!-- END AD -->
+
+    <!-- BEGIN SUBSCRIPTION -->
+    <app-subscription class="landing__sub"></app-subscription>
+    <!-- END SUBSCRIPTION -->
+
+    <!-- BEGIN APP -->
+    <app-app-display class="landing__app"></app-app-display>
+    <!-- END APP -->

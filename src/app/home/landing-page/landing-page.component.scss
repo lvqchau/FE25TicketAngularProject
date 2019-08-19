@@ -1,16 +1,5 @@
 @import "../../../color.scss";
 
-// Carousel
-.cinema__carousel {
-  height: 520px;
-  .carousel-inner {
-    img {
-      width: 100%;
-      height: 520px;
-    }
-  }
-}
-
 // Ticker Form
 .cinema__ticketform {
   position: relative;
@@ -94,370 +83,6 @@
       }
     }
   }
-}
-
-// Movie Gallery
-.cinema__movie {
-  .movie__container {
-    .nav {
-      justify-content: center;
-      margin: 40px 0;
-      a.active {
-        font-weight: 600;
-        color: $white;
-        text-transform: uppercase;
-        border: 1px solid $purple-primary;
-        width: 200px;
-        background-color: $purple-primary;
-      }
-      a {
-        color: $black;
-        transition: all 0.3s;
-        width: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid $purple-primary;
-        background-color: $white;
-        &:hover {
-          font-weight: 600;
-        }
-      }
-      .current__movie {
-        a {
-          border-radius: 10px 0 0 10px;
-        }
-      }
-      .upcoming__movie {
-        a {
-          border-radius: 0 10px 10px 0;
-        }
-      }
-    }
-
-    .tab-content {
-      padding: 0 20px;
-      display: flex;
-      justify-content: center;
-      .tab__grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-gap: 15px;
-        @media screen and (min-width: 986px) {
-          grid-gap: 25px;
-        }
-      }
-      .movie__item {
-        position: relative;
-        @media screen and (min-width: 986px) {
-          min-height: 220px;
-          width: 170px;
-        }
-
-        img {
-          border-radius: 12px;
-          width: 100%;
-          height: 100%;
-        }
-        .movie__content {
-          margin-top: 10px;
-          position: relative;
-          .btn {
-            position: absolute;
-            transition: 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            top: 0;
-            left: 0;
-            margin: 0;
-            border: 0;
-            width: 100%;
-            font-size: 16px;
-            @media screen and (min-width: 986px) {
-              font-size: 18px;
-            }
-            @media screen and (min-width: 868px) {
-              font-size: 17px;
-            }
-          }
-          h5,
-          p {
-            display: none;
-            color: $black-text;
-            @media screen and (min-width: 545px) {
-              display: block;
-              opacity: 1;
-              visibility: visible;
-            }
-            transition: 0.3s;
-          }
-          h5 {
-            font-size: 17px;
-            @media screen and (min-width: 986px) {
-              font-size: 18px;
-            }
-            line-height: 20px;
-            height: 40px;
-            font-weight: 600;
-            width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-          }
-          p {
-            font-size: 14px;
-            @media screen and (min-width: 986px) {
-              font-size: 16px;
-            }
-
-            margin: 0;
-          }
-        }
-        .movie__img {
-          width: 170px;
-          border-radius: 12px;
-          overflow: hidden;
-          height: 220px;
-          position: relative;
-          .overlay {
-            transition: 0.4s;
-            height: 150%;
-            width: 170%;
-            position: absolute;
-            top: 65%;
-            left: -140%;
-            transform: rotate(45deg);
-            background: $yellow-primary;
-            a {
-              color: $black;
-              .lnr {
-                font-size: 2vw;
-                @media screen and (min-width: 986px) {
-                  font-size: 18px;
-                }
-                transition: 0.3s;
-                position: absolute;
-                left: 48%;
-                top: 2%;
-                transform: rotate(75deg);
-              }
-            }
-          }
-        }
-        &:hover {
-          .movie__content {
-            .btn {
-              display: none;
-              @media screen and (min-width: 545px) {
-                display: block;
-                opacity: 1;
-                visibility: visible;
-              }
-            }
-            h5,
-            p {
-              opacity: 0;
-              visibility: hidden;
-            }
-          }
-          .movie__img {
-            .overlay {
-              height: 150%;
-              opacity: 0.9;
-              top: -25%;
-              left: -40%;
-              .lnr {
-                left: 53%;
-                top: 49%;
-                transform: translate(-50%, -50%) rotate(75deg);
-                font-size: 35px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.cinema__movie {
-  .slick-next,
-  .slick-prev {
-    background-color: $yellow-primary;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    transition: all 0.4s;
-    &:before {
-      font-family: "Linearicons-Free";
-      color: black;
-      transition: all 0.4s;
-    }
-    &:hover {
-      background: $purple-gradient;
-      &::before {
-        color: white;
-      }
-    }
-  }
-  .slick-next {
-    right: -70px;
-    &:before {
-      content: "\e87a";
-      font-size: 30px;
-    }
-  }
-  .slick-prev {
-    left: -70px;
-    &:before {
-      content: "\e879";
-      font-size: 30px;
-    }
-  }
-
-  .carousel {
-    width: 760px;
-    margin: 0 auto;
-  }
-  .slide {
-    width: 170px !important;
-    margin: 10px 10px;
-    .btn {
-      display: none;
-    }
-    h5 {
-      font-size: 18px !important;
-      margin: 0;
-      color: $black-text;
-    }
-    p {
-      font-size: 16px !important;
-      color: $black-text;
-    }
-    &:hover {
-      .movie__content {
-        .btn {
-          display: none;
-          @media screen and (min-width: 545px) {
-            display: block;
-            opacity: 1;
-            visibility: visible;
-          }
-        }
-        h5,
-        p {
-          opacity: 0;
-          visibility: hidden;
-        }
-      }
-      .movie__img {
-        .overlay {
-          height: 150%;
-          opacity: 0.9;
-          top: -25%;
-          left: -40%;
-          .lnr {
-            left: 53%;
-            top: 49%;
-            transform: translate(-50%, -50%) rotate(75deg);
-            font-size: 35px;
-          }
-        }
-      }
-    }
-  }
-  .movie__content {
-    margin-top: 10px;
-    position: relative;
-    text-align: left;
-    .btn {
-      position: absolute;
-      transition: 0.3s;
-      opacity: 0;
-      visibility: hidden;
-      top: 0;
-      left: 0;
-      margin: 0;
-      border: 0;
-      width: 100%;
-      font-size: 16px;
-      @media screen and (min-width: 986px) {
-        font-size: 18px;
-      }
-      @media screen and (min-width: 868px) {
-        font-size: 17px;
-      }
-    }
-    h5,
-    p {
-      display: none;
-      @media screen and (min-width: 545px) {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-      }
-      transition: 0.3s;
-    }
-    h5 {
-      font-size: 17px;
-      @media screen and (min-width: 986px) {
-        font-size: 18px;
-      }
-      line-height: 20px;
-      height: 40px;
-      font-weight: 600;
-      width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    p {
-      font-size: 14px;
-      @media screen and (min-width: 986px) {
-        font-size: 16px;
-      }
-
-      margin: 0;
-    }
-  }
-  .movie__img {
-    width: 170px;
-    border-radius: 12px;
-    overflow: hidden;
-    height: 220px;
-    position: relative;
-    img {
-      height: 220px;
-      width: 170px;
-    }
-    .overlay {
-      transition: 0.4s;
-      height: 150%;
-      width: 170%;
-      position: absolute;
-      top: 65%;
-      left: -140%;
-      transform: rotate(45deg);
-      background: $yellow-primary;
-      a {
-        color: $black;
-        .lnr {
-          font-size: 2vw;
-          @media screen and (min-width: 986px) {
-            font-size: 18px;
-          }
-          transition: 0.3s;
-          position: absolute;
-          left: 48%;
-          top: 2%;
-          transform: rotate(75deg);
-        }
-      }
-    }
-  }
-}
-
-// Cinema Ad
-.cinema__ad {
-  margin: 50px 180px;
 }
 
 // Cinema Form
@@ -670,6 +295,28 @@
 
 // Cinema News
 
-//Email
+//Subscribe
+.landing__sub,
+.landing__ad,
+.landing__app {
+  display: block;
+}
+.landing__sub {
+  width: 100%;
+  background: $purple-gradient;
+}
+
+//Ad
+.landing__ad {
+  padding: 30px 180px;
+  margin: 0 auto;
+}
 
 //App
+.landing__app {
+  width: 100%;
+  height: 500px;
+  background: url("../../../assets/img/app-bg.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+}

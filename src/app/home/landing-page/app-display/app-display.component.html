@@ -1,0 +1,23 @@
+
+<div class="overlay app__container text-white d-flex justify-content-between align-items-center">
+    <div>
+        <h1 class="mb-2">Ứng dụng tiện lợi dành cho người yêu điện ảnh</h1>
+        <h4 class="mb-4">Không chỉ đặt vé, bạn còn có thể bình luận phim, chấm điểm rạp và đổi quà hấp dẫn.</h4>
+        <a class="download"><button mat-button color="primary" class="mt-2 mb-1">App miễn phí - Tải về ngay</button></a>
+        <p>CyberPhim có hai phiên bản 
+            <a href="/">iOS</a>
+            và 
+            <a href="/">Android</a>
+        </p>
+    </div>
+    <div class="app__mobile">
+        <img src="assets/img/app/iphone.png">
+        <ngx-slick-carousel class="carousel text-white"
+            #slickModal="slick-carousel" 
+            [config]="slideMovieConfig">
+            <div ngxSlickItem><img src="assets/img/app/slide1.png"></div>
+            <div ngxSlickItem><img src="assets/img/app/slide2.png"></div>
+            <div ngxSlickItems><img src="assets/img/app/slide3.png"></div>
+        </ngx-slick-carousel>  
+    </div>
+</div>

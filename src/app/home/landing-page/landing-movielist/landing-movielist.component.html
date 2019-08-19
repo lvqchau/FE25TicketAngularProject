@@ -1,0 +1,34 @@
+<!-- BEGIN MOVIE -->
+<div class="movie__container">
+    <ul class="nav nav-pills">
+        <li class="nav-item current__movie">
+        <a class="nav-link active" data-toggle="pill" href="#now">Đang chiếu</a>
+        </li>
+        <li class="nav-item upcoming__movie">
+        <a class="nav-link" data-toggle="pill" href="#future">Sắp chiếu</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="now">
+        <ngx-slick-carousel class="carousel" 
+            #slickModal="slick-carousel" 
+            [config]="slideMovieConfig">
+            <div ngxSlickItem *ngFor="let movie of movieList">
+            <app-landing-movieitem [movieItem]="movie"></app-landing-movieitem>
+            </div>
+        </ngx-slick-carousel>
+        </div>
+        <div class="tab-pane fade" id="future">
+        <ngx-slick-carousel class="carousel" 
+            #slickModal2="slick-carousel" 
+            [config]="slideMovieConfig">
+            <div ngxSlickItem *ngFor="let movie of movieList">
+            <app-landing-movieitem [movieItem]="movie"></app-landing-movieitem>
+            </div>
+        </ngx-slick-carousel>
+        </div>
+    </div>
+</div>
+<!-- END MOVIE -->

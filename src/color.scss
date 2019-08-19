@@ -12,6 +12,11 @@ $purple-gradient-light: linear-gradient(
   #5027db 70%,
   #540fed 100%
 );
+$gray-gradient: radial-gradient(
+  rgba(59, 59, 59, 0.6) 0%,
+  rgba(31, 29, 21, 0.8) 30%,
+  rgba(0, 0, 0, 1) 100%
+);
 
 $purple-shadow: #aa98df;
 //logo, navigation dot, navigation arrow, arrow-down:
@@ -29,13 +34,8 @@ $orangered: orangered;
 $green: #1f9350;
 
 $purple-primary: #5943ff;
+$purple-dark: #4527a0;
 $black-text: #000;
 $bg: #fff;
 $border: $gray-light;
 $main-bg: #14181d;
-
-$purple-primary-dark: #8605ff;
-$border-dark: #778899;
-$black-text-dark: #c4daf0;
-$bg-dark: transparent;
-$main-bg-dark: $white;

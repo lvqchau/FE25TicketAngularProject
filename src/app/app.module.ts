@@ -1,3 +1,5 @@
+import { LoginSignupModule } from "./login-signup/login-signup.module";
+import { MaterialModule } from "./_core/material/material.module";
 import { CheckoutModule } from "./checkout/checkout.module";
 import { HomeModule } from "./home/home.module";
 import { BrowserModule } from "@angular/platform-browser";
@@ -12,6 +14,7 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatSelectModule } from "@angular/material/select";
 import { SlickCarouselModule } from "ngx-slick-carousel";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +31,10 @@ import { SlickCarouselModule } from "ngx-slick-carousel";
     MatSelectModule,
     SlickCarouselModule,
     HomeModule,
-    CheckoutModule
+    CheckoutModule,
+    MaterialModule,
+    HttpClientModule,
+    LoginSignupModule
   ],
   providers: [],
   bootstrap: [AppComponent]

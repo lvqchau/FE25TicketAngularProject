@@ -1,0 +1,21 @@
+.lnr-logo {
+  font-size: 40px;
+}
+
+:ng-deep input:-internal-autofill-selected {
+  background-color: transparent !important;
+  color: white;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-hint {
+  color: white;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: white;
+}
+.fb__btn {
+  width: 200px;
+  height: 20px;
+  background-color: rgb(0, 119, 230);
+  color: black;
+}
