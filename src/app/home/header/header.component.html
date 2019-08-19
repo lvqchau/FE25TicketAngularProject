@@ -1,7 +1,7 @@
 <!-- BEGIN HEADER -->
     <header>
       <div class="navbar cinema__header navbar-expand-md">
-        <a href="/" class="navbar-brand ml-0">
+        <a routerLink="/" class="navbar-brand ml-0">
           <span class="lnr lnr-logo" style="font-size: 40px;"></span>
         </a> 
         <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target=".dual-nav">
@@ -9,17 +9,17 @@
         </button>
         <div class="navbar-collapse collapse dual-nav center__navbar">
             <ul class="navbar-nav justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Lịch chiếu</a>
+                <li class="nav-item" [routerLink]="['']" fragment="ticketform">
+                  <a class="nav-link" href="#ticketform">Lịch chiếu</a>
+                </li>
+                <li class="nav-item" [routerLink]="['']" fragment="cinemaform">
+                  <a class="nav-link" href="#cinemaform">Cụm rạp</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Cụm rạp</a>
+                  <a class="nav-link" routerLink="/">Tin tức</a> 
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Tin tức</a> 
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Ứng dụng</a> 
+                <li class="nav-item" [routerLink]="['']" fragment="appdisplay">
+                  <a class="nav-link" href="#appdisplay">Ứng dụng</a> 
                 </li>
             </ul>
           </div>
