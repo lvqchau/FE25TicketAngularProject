@@ -1,3 +1,5 @@
+import { ImgHolderDirective } from "./../img-holder.directive";
+import { SpinnerModule } from "./../../spinner/spinner.module";
 import { LandingRoutingModule } from "./landing-page-routing.module";
 import { RouterModule } from "@angular/router";
 import { MaterialModule } from "./../../_core/material/material.module";
@@ -12,6 +14,7 @@ import { LandingNewsComponent } from "./landing-news/landing-news.component";
 import { LandingMovieitemComponent } from "./landing-movielist/landing-movieitem/landing-movieitem.component";
 import { SubscriptionComponent } from "./subscription/subscription.component";
 import { AppDisplayComponent } from "./app-display/app-display.component";
+import { HomeAddonModule } from "../home-addon/home-addon.module";
 @NgModule({
   declarations: [
     LandingPageComponent,
@@ -21,14 +24,17 @@ import { AppDisplayComponent } from "./app-display/app-display.component";
     LandingNewsComponent,
     LandingMovieitemComponent,
     SubscriptionComponent,
-    AppDisplayComponent
+    AppDisplayComponent,
+    ImgHolderDirective
   ],
   imports: [
     CommonModule,
     SlickCarouselModule,
     MaterialModule,
     RouterModule,
-    LandingRoutingModule
+    LandingRoutingModule,
+    SpinnerModule,
+    HomeAddonModule
   ],
   exports: [
     LandingPageComponent,

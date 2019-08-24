@@ -1,6 +1,7 @@
 <div class="slide">
     <div class="movie__img">
-        <img [src]="movie.hinhAnh"/>
+        <img [appImgHolder]="movie.hinhAnh" onerror="this.src='assets/img/null-movie.png'">
+        
         <a 
         [routerLink]="['/phim/', movie.maPhim]"
         [queryParams]="{tenPhim: movie.biDanh}"
@@ -12,7 +13,11 @@
     </div>
     <div class="movie__content">
         <h5>{{movie.tenPhim}}</h5>
-        <p>1641 phút - {{movie.danhGia+5}} IMDb</p>
+        <p>{{movie.thoiLuong}} phút 
+        <span class="imdbRatingPlugin" data-user="ur106908509" [attr.data-title]="movie.idmb" data-style="p4">
+        - IDMb
+        </span>
+        </p>
         <button class="btn cinema__btn">MUA VÉ</button>
     </div>
 </div>

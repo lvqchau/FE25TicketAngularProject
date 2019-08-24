@@ -3,7 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: "dang-ky",
+    path: "dang-nhap",
     loadChildren: "./login-signup/login-signup.module#LoginSignupModule"
   },
   { path: "", loadChildren: "./home/home.module#HomeModule" },

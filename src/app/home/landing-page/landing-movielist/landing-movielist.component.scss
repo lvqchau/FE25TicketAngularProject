@@ -1,17 +1,5 @@
 @import "../../../../color.scss";
 
-@font-face {
-  font-family: "Linearicons-Free";
-  src: url("../../../../assets/font/Linearicons-Free.eot?g78a5s");
-  src: url("../../../../assets/font/Linearicons-Free.eot?g78a5s#iefix")
-      format("embedded-opentype"),
-    url("../../../../assets/font/Linearicons-Free.ttf?g78a5s")
-      format("truetype"),
-    url("../../../../assets/font/Linearicons-Free.woff?g78a5s") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 // Movie Gallery
 .movie__container {
   .nav {

@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class LandingMovieitemComponent implements OnInit {
   @Input() movie;
+
   constructor() {}
 
   ngOnInit() {}

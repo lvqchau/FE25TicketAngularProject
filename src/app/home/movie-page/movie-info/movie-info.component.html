@@ -1,0 +1,11 @@
+<div class="movie__info d-flex align-items-center">
+    <img [src]="movieInfo.hinhAnh" onerror="this.src='assets/img/null-movie.png'">
+    <div class="movie__detail pl-2">
+        <p>{{movieInfo.ngayKhoiChieu | date: 'dd.MM.yyyy'}}</p>
+        <h4>{{movieInfo.tenPhim}}</h4>
+        <p>{{movieInfo.thoiLuong}} phút - IDMb 
+            <span class="text-white imdbRatingPlugin" data-user="ur106908509" [attr.data-title]="movieInfo.idmb" data-style="p4">
+            </span>
+        </p>
+    </div>
+</div>

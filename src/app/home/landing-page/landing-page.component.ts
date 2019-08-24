@@ -1,5 +1,17 @@
-import { Component, Input, ViewEncapsulation, OnInit } from "@angular/core";
+import { LandingMovielistComponent } from "./landing-movielist/landing-movielist.component";
+import { Observable } from "rxjs";
+import { delay } from "rxjs/operators";
+import { QuanLyPhimService } from "./../../_core/services/quan-ly-phim.service";
+import {
+  Component,
+  Input,
+  ViewEncapsulation,
+  OnInit,
+  ViewChild
+} from "@angular/core";
 import $ from "jquery";
+import { timer } from "rxjs";
+
 @Component({
   selector: "app-landing-page",
   templateUrl: "./landing-page.component.html",
@@ -7,6 +19,26 @@ import $ from "jquery";
   encapsulation: ViewEncapsulation.None
 })
 export class LandingPageComponent implements OnInit {
+  constructor(public dataService: QuanLyPhimService) {}
+  showSpinner: boolean = true;
+
+  getSpinner() {
+    // this.dataService.showSpinner.subscribe(data => {
+    //   this.showSpinner = data;
+    // });
+    setTimeout(() => {
+      this.dataService.showSpinner.subscribe(data => {
+        this.showSpinner = data;
+      });
+      // if (this.showSpinner == false) {
+      //   document.getElementById("hideTemplate").classList.add("active");
+      // }
+    }, 3000);
+  }
+  ngOnInit() {
+    this.getSpinner();
+  }
+
   consoleCur(value) {
     this.timeForCine = this.dateList[value];
     this.daySetUp();
@@ -90,10 +122,6 @@ export class LandingPageComponent implements OnInit {
       }
     }
   }
-
-  ngOnInit() {}
-
-  ngAfterViewInit() {}
 
   statusCinema: boolean = false;
   statusDate: boolean = false;
@@ -211,7 +239,6 @@ export class LandingPageComponent implements OnInit {
     "16:30"
   ];
 
-  constructor() {}
   formatDate(date) {
     let d = new Date(date);
     let day;

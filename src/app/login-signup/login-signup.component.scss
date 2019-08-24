@@ -1,4 +1,23 @@
 @import "../../color.scss";
+.log__sign {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  animation: flowing infinite 300s linear;
+  background: url("../../assets/img/bg-fullwidth.png") repeat center center;
+}
+
+@keyframes flowing {
+  from {
+    background-position: 0 -10000px;
+  }
+  to {
+    background-position: -10000px 0;
+  }
+}
 .overlay {
   position: relative;
   width: 100%;
@@ -13,6 +32,18 @@
     font-size: 50px;
     color: $yellow-primary;
   }
+}
+:ng-deep input:-internal-autofill-selected {
+  background-color: transparent !important;
+  color: white;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-hint,
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: white;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: white;
 }
 
 .login__container {
@@ -35,4 +66,12 @@
   .lnr-logo {
     font-size: 40px;
   }
+}
+
+::ng-deep router-outlet + app-login,
+::ng-deep router-outlet + app-signup {
+  color: white;
+  display: flex !important;
+  align-items: center;
+  flex-direction: column;
 }

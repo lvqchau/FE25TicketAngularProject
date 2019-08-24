@@ -1,5 +1,20 @@
 @import "../../../color.scss";
 
+#hideTemplate {
+  display: none;
+}
+#hideTemplate.active {
+  display: block;
+}
+.spinner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.514);
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
 // Ticker Form
 .cinema__ticketform {
   position: relative;
@@ -91,206 +106,6 @@
   width: 100%;
   align-items: center;
   padding: 0 20px;
-  h2 {
-    font-weight: 600;
-    display: inline;
-    margin-bottom: 40px;
-    position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      transition: all 0.4s;
-      width: 100%;
-      height: 3px;
-      border-radius: 10px;
-      background: $purple-gradient-light;
-    }
-  }
-  .cinemaform__container {
-    background: $bg;
-    border-radius: 12px;
-    border: 1px solid $border;
-    .nav__main {
-      padding: 15px 0;
-      border-bottom: 1px solid $border;
-      .nav-link {
-        margin: 0 15px;
-        height: 65px;
-        width: 65px;
-        padding: 0;
-        border-radius: 50%;
-        &:hover {
-          img {
-            opacity: 1;
-          }
-        }
-        &.active {
-          position: relative;
-          img {
-            opacity: 1;
-          }
-          &:after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: $purple-primary;
-          }
-        }
-        img {
-          opacity: 0.5;
-          height: 100%;
-          width: 100%;
-        }
-      }
-    }
-    .tab-content {
-      height: 500px;
-      & > .active {
-        display: flex;
-        flex-direction: row;
-      }
-
-      .tab-pane {
-        .nav__overflow {
-          height: 500px;
-          overflow-y: scroll;
-          .nav {
-            padding: 10px;
-            height: 100%;
-            border-right: 1px solid $border;
-            flex-direction: column;
-            .nav-link {
-              width: 100%;
-              background: $bg;
-              border-radius: 0;
-              border-bottom: 1px solid $border;
-              opacity: 0.5;
-              &.active,
-              &:hover {
-                opacity: 1;
-              }
-
-              .brand__branch {
-                width: 45px;
-                height: 45px;
-                margin-top: 5px;
-                img {
-                  width: 100%;
-                  height: 100%;
-                }
-              }
-              .branch__info {
-                flex-direction: column;
-                width: 150px;
-                p,
-                span {
-                  font-size: 11px;
-                  margin: 0;
-                  color: $black-text;
-                }
-                .branch__name {
-                  font-size: 13px;
-                  line-height: 13px;
-                  color: $purple-primary;
-                  span {
-                    font-size: 13px;
-                  }
-                }
-                .branch__address {
-                  text-overflow: ellipsis;
-                  overflow: hidden;
-                  white-space: nowrap;
-                }
-                .branch__more {
-                  color: $orangered;
-                  display: table;
-                  &:hover {
-                    color: $purple-light;
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        .tab-content {
-          height: 500px;
-          overflow-y: scroll;
-        }
-      }
-      .tab-content {
-        width: 610px;
-        overflow: hidden;
-        overflow-y: scroll;
-        .branch__container {
-          border-bottom: 1px solid $border;
-        }
-        .branch__movie {
-          padding: 10px;
-          .branch__movieinfo {
-            cursor: pointer;
-            img {
-              width: 50px;
-              height: 50px;
-            }
-            h3 {
-              font-size: 19px;
-              font-weight: 600;
-            }
-            .movieinfo__content {
-              .movie__title {
-                color: $black-text;
-                .age__restrict {
-                  padding: 0px 4px 2px;
-                  border-radius: 3px;
-                  font-size: 14px;
-                  color: white;
-                  background-color: $orangered;
-                  margin-right: 5px;
-                }
-              }
-              .movie__ratings {
-                p {
-                  color: gray;
-                }
-              }
-            }
-          }
-          .movie__schedule {
-            width: 100%;
-            img {
-              width: 30px;
-              height: 30px;
-              margin-top: 10px;
-              margin-left: 10px;
-              // filter: brightness(160%);
-            }
-            .movie__time {
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-              width: 100%;
-              a {
-                text-decoration: none;
-                font-size: 25px;
-                font-weight: 600;
-                color: $green;
-                // color: #12c25b;
-                &:hover {
-                  color: $orangered;
-                  // color: rgb(255, 217, 0);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 // Cinema News

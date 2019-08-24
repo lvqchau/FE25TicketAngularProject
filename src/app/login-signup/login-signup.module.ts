@@ -6,6 +6,7 @@ import { LoginSignupComponent } from "./login-signup.component";
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
 import { FbBtnComponent } from "./fb-btn/fb-btn.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,12 @@ import { FbBtnComponent } from "./fb-btn/fb-btn.component";
     SignupComponent,
     FbBtnComponent
   ],
-  imports: [CommonModule, MaterialModule, FormRoutingModule],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    FormRoutingModule,
+    ReactiveFormsModule
+  ],
   exports: [
     LoginSignupComponent,
     LoginComponent,

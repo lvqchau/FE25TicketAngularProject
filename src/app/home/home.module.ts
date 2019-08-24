@@ -1,3 +1,4 @@
+import { HomeAddonModule } from "./home-addon/home-addon.module";
 import { LandingPageModule } from "./landing-page/landing-page.module";
 import { CinemaPageModule } from "./cinema-page/cinema-page.module";
 import { NgModule } from "@angular/core";
@@ -5,25 +6,20 @@ import { CommonModule } from "@angular/common";
 import { HomeComponent } from "./home.component";
 import { MoviePageModule } from "./movie-page/movie-page.module";
 import { NewsPageModule } from "./news-page/news-page.module";
-import { HeaderComponent } from "./header/header.component";
-import { FooterComponent } from "./footer/footer.component";
-import { MovieTicketboxComponent } from "./movie-ticketbox/movie-ticketbox.component";
 import { HomeRoutingModule } from "./home-routing.module";
+import { SpinnerModule } from "../spinner/spinner.module";
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent,
-    MovieTicketboxComponent
-  ],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
     CinemaPageModule,
     LandingPageModule,
     MoviePageModule,
     NewsPageModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SpinnerModule,
+    HomeAddonModule
   ],
   exports: [HomeComponent]
 })

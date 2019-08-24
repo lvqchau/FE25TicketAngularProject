@@ -1,3 +1,4 @@
+import { LandingPageModule } from "./landing-page/landing-page.module";
 import { MoviePageModule } from "./movie-page/movie-page.module";
 import { HomeComponent } from "./home.component";
 import { NgModule } from "@angular/core";
@@ -9,12 +10,12 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: "",
-        loadChildren: "./landing-page/landing-page.module#LandingPageModule"
+        path: "phim/:movieId",
+        loadChildren: () => MoviePageModule
       },
       {
-        path: "phim/:movieId",
-        loadChildren: "./movie-page/movie-page.module#MoviePageModule"
+        path: "land",
+        loadChildren: () => LandingPageModule
       }
     ]
   }

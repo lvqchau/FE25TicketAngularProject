@@ -1,4 +1,4 @@
-@import "../../../color.scss";
+@import "../../../../color.scss";
 
 header {
   width: 100%;
@@ -29,7 +29,8 @@ header {
     }
     .custom-select {
       appearance: none;
-      background: url("../../../assets/img/arrow-down.svg") 90% / 10% no-repeat;
+      background: url("../../../../assets/img/arrow-down.svg") 90% / 10%
+        no-repeat;
       width: unset;
       color: white;
       border: none;

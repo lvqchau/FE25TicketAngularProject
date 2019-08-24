@@ -1,1 +1,25 @@
-<p>signup works!</p>
+<h5 class="m-0 p-0">Đăng ký</h5>
+<mat-form-field hintLabel="Max 15 ký tự">
+    <input matInput #user maxlength="15" placeholder="Username" [formControl]="usernameForm" required>
+    <mat-hint align="end">{{user.value.length || 0}}/15</mat-hint>
+    <mat-error *ngIf="usernameForm.invalid">
+      {{getUserError()}}
+    </mat-error>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Email" [formControl]="emailForm" required>
+    <mat-error *ngIf="emailForm.invalid">{{getErrorMessage()}}</mat-error>
+</mat-form-field>
+<mat-form-field>
+    <input #pass matInput minlength="6" maxlength="15" type="password" placeholder="Password" [formControl]="PassForm" required [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button class="btn_eye" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-hint align="end">{{pass.value.length || 0}}/15</mat-hint>
+    <mat-error *ngIf="PassForm.invalid">
+        {{getPassError()}}
+    </mat-error>
+</mat-form-field>
+ 
+<!--<app-fb-btn></app-fb-btn>-->
+<a routerLink="/dang-nhap" >Bạn đã có tài khoản?</a>

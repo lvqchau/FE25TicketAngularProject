@@ -1,8 +1,8 @@
 import { environment } from "./../../../environments/environment";
 import { Injectable } from "@angular/core";
-import { Observable, throwError } from "rxjs";
+import { Observable, throwError, BehaviorSubject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
-import { tap, catchError } from "rxjs/operators";
+import { tap, catchError, delay } from "rxjs/operators";
 
 let urlApi = "";
 
@@ -13,14 +13,30 @@ export class QuanLyPhimService {
   constructor(private http: HttpClient) {
     urlApi = environment.urlApi;
   }
+  public showSpinner = new BehaviorSubject<boolean>(false);
+  public spinned = this.showSpinner.asObservable();
+  public downloadURL = new BehaviorSubject<string>(
+    "http://via.placeholder.com/350x150"
+  );
+
+  getImg(img: string) {
+    this.downloadURL.next(img);
+  }
+
+  openSpinner(spinner: boolean): boolean {
+    this.showSpinner.next(spinner);
+    return spinner;
+  }
 
   get(uri: string): Observable<any> {
+    this.openSpinner(true);
     return this.http.get(urlApi + "/" + uri).pipe(
-      tap(() => {
-        //splash
-      }),
+      tap(() => {}),
       catchError(err => {
         return this.handleError(err);
+      }),
+      tap(() => {
+        this.openSpinner(false);
       })
     );
   }
