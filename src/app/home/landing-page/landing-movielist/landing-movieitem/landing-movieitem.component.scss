@@ -1,137 +1,137 @@
-@import "../../../../../color.scss";
+@import "../../../../../constants/color.scss";
 
 .movie__content {
-  margin-top: 10px;
-  position: relative;
-  text-align: left;
-  .btn {
-    position: absolute;
-    transition: 0.3s;
-    opacity: 0;
-    visibility: hidden;
-    top: 0;
-    left: 0;
-    margin: 0;
-    border: 0;
-    width: 100%;
-    font-size: 16px;
-    @media screen and (min-width: 986px) {
-      font-size: 18px;
-    }
-    @media screen and (min-width: 868px) {
-      font-size: 17px;
-    }
-  }
-  h5,
-  p {
-    display: none;
-    @media screen and (min-width: 545px) {
-      display: block;
-      opacity: 1;
-      visibility: visible;
-    }
-    transition: 0.3s;
-  }
-  h5 {
-    font-size: 17px;
-    @media screen and (min-width: 986px) {
-      font-size: 18px;
-    }
-    line-height: 20px;
-    height: 40px;
-    font-weight: 600;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  p {
-    font-size: 14px;
-    @media screen and (min-width: 986px) {
-      font-size: 16px;
-    }
+	margin-top: 10px;
+	position: relative;
+	text-align: left;
+	.btn {
+		position: absolute;
+		transition: 0.3s;
+		opacity: 0;
+		visibility: hidden;
+		top: 0;
+		left: 0;
+		margin: 0;
+		border: 0;
+		width: 100%;
+		font-size: 16px;
+		@media screen and (min-width: 986px) {
+			font-size: 18px;
+		}
+		@media screen and (min-width: 868px) {
+			font-size: 17px;
+		}
+	}
+	h5,
+	p {
+		display: none;
+		@media screen and (min-width: 545px) {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+		}
+		transition: 0.3s;
+	}
+	h5 {
+		font-size: 17px;
+		@media screen and (min-width: 986px) {
+			font-size: 18px;
+		}
+		line-height: 20px;
+		height: 40px;
+		font-weight: 600;
+		width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	p {
+		font-size: 14px;
+		@media screen and (min-width: 986px) {
+			font-size: 16px;
+		}
 
-    margin: 0;
-  }
+		margin: 0;
+	}
 }
 .movie__img {
-  width: 170px;
-  border-radius: 12px;
-  overflow: hidden;
-  height: 230px;
-  position: relative;
-  img {
-    height: 230px;
-    width: 170px;
-  }
-  .overlay {
-    transition: 0.4s;
-    height: 150%;
-    width: 170%;
-    position: absolute;
-    top: 65%;
-    left: -140%;
-    transform: rotate(45deg);
-    background: $yellow-primary;
-    a {
-      color: $black;
-      .lnr {
-        font-size: 2vw;
-        @media screen and (min-width: 986px) {
-          font-size: 18px;
-        }
-        transition: 0.3s;
-        position: absolute;
-        left: 48%;
-        top: 2%;
-        transform: rotate(75deg);
-      }
-    }
-  }
+	width: 170px;
+	border-radius: 12px;
+	overflow: hidden;
+	height: 230px;
+	position: relative;
+	img {
+		height: 230px;
+		width: 170px;
+	}
+	.overlay {
+		transition: 0.4s;
+		height: 150%;
+		width: 170%;
+		position: absolute;
+		top: 65%;
+		left: -140%;
+		transform: rotate(45deg);
+		background: $yellow-primary;
+		a {
+			color: $black;
+			.lnr {
+				font-size: 2vw;
+				@media screen and (min-width: 986px) {
+					font-size: 18px;
+				}
+				transition: 0.3s;
+				position: absolute;
+				left: 48%;
+				top: 2%;
+				transform: rotate(75deg);
+			}
+		}
+	}
 }
 .slide {
-  width: 170px !important;
-  margin: 10px 10px;
-  .btn {
-    display: none;
-  }
-  h5 {
-    font-size: 18px !important;
-    margin: 0;
-    color: $black-text;
-  }
-  p {
-    font-size: 16px !important;
-    color: $black-text;
-  }
-  &:hover {
-    .movie__content {
-      .btn {
-        display: none;
-        @media screen and (min-width: 545px) {
-          display: block;
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-      h5,
-      p {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-    .movie__img {
-      .overlay {
-        height: 150%;
-        opacity: 0.9;
-        top: -25%;
-        left: -40%;
-        .lnr {
-          left: 53%;
-          top: 49%;
-          transform: translate(-50%, -50%) rotate(75deg);
-          font-size: 35px;
-        }
-      }
-    }
-  }
+	width: 170px !important;
+	margin: 10px 10px;
+	.btn {
+		display: none;
+	}
+	h5 {
+		font-size: 18px !important;
+		margin: 0;
+		color: $black-text;
+	}
+	p {
+		font-size: 16px !important;
+		color: $black-text;
+	}
+	&:hover {
+		.movie__content {
+			.btn {
+				display: none;
+				@media screen and (min-width: 545px) {
+					display: block;
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			h5,
+			p {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		.movie__img {
+			.overlay {
+				height: 150%;
+				opacity: 0.9;
+				top: -25%;
+				left: -40%;
+				.lnr {
+					left: 53%;
+					top: 49%;
+					transform: translate(-50%, -50%) rotate(75deg);
+					font-size: 35px;
+				}
+			}
+		}
+	}
 }

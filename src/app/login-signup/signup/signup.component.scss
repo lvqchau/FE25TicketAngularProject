@@ -1,35 +1,36 @@
-@import '../../../color.scss';
+@import '../../../constants/color.scss';
 .btn_eye {
-  position: absolute;
-  right: -8px;
-  top: 50%;
-  transform: translateY(-50%);
+	position: absolute;
+	right: -8px;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .material-icons {
-  font-size: 18px;
+	font-size: 18px;
 }
 
 .gridcol {
-  display:grid;
-  grid-template-columns: 1fr 1fr;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
 h5 {
-  text-align: center;
-  height: unset;
+	text-align: center;
+	height: unset;
 }
 a {
-  cursor: pointer;
-  display: block;
-  height: unset;
-  margin-bottom: 50px;
-  width: unset;
-  color: $yellow-primary !important;
-  opacity: 0.8;
-  &:hover {
-    opacity: 1;
-  }
-}mat-form-field {
-  width: 100%;
+	cursor: pointer;
+	display: block;
+	height: unset;
+	margin-bottom: 50px;
+	width: unset;
+	color: $yellow-primary !important;
+	opacity: 0.8;
+	&:hover {
+		opacity: 1;
+	}
+}
+mat-form-field {
+	width: 100%;
 }

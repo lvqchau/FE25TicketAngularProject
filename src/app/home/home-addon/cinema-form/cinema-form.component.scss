@@ -1,54 +1,53 @@
-@import "../../../../color.scss";
+@import "../../../../constants/color.scss";
 // Cinema Form
 
 .cinemaform__container {
-  background: $bg;
-  border-radius: 12px;
-  border: 1px solid $border;
-  .nav__main {
-    padding: 15px 0;
-    border-bottom: 1px solid $border;
-    .nav-link {
-      margin: 0 15px;
-      height: 65px;
-      width: 65px;
-      padding: 0;
-      border-radius: 50%;
-      &:hover {
-        img {
-          opacity: 1;
-        }
-      }
-      &.active {
-        position: relative;
-        img {
-          opacity: 1;
-        }
-        &:after {
-          content: "";
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: $purple-primary;
-        }
-      }
-      img {
-        opacity: 0.5;
-        height: 100%;
-        width: 100%;
-      }
-    }
-  }
-  .tab-content {
-    height: 500px;
-    & > .active {
-      display: flex;
-      flex-direction: row;
-    }
-
-  }
+	background: $bg;
+	border-radius: 12px;
+	border: 1px solid $border;
+	.nav__main {
+		padding: 15px 0;
+		border-bottom: 1px solid $border;
+		.nav-link {
+			margin: 0 15px;
+			height: 65px;
+			width: 65px;
+			padding: 0;
+			border-radius: 50%;
+			&:hover {
+				img {
+					opacity: 1;
+				}
+			}
+			&.active {
+				position: relative;
+				img {
+					opacity: 1;
+				}
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: -10px;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					background: $purple-primary;
+				}
+			}
+			img {
+				opacity: 0.5;
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+	.tab-content {
+		height: 500px;
+		& > .active {
+			display: flex;
+			flex-direction: row;
+		}
+	}
 }
