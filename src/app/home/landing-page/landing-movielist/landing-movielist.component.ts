@@ -20,7 +20,8 @@ export class LandingMovielistComponent implements OnInit {
 	};
 
 	movieList: any = [];
-
+	tagName: any = [];
+	groupCode: string;
 	movieIDMb: any = [
 		{
 			biDanh: 'ted-2',
@@ -97,7 +98,6 @@ export class LandingMovielistComponent implements OnInit {
 
 		return throwError(err);
 	}
-	tagName: any = [];
 
 	getResponse() {
 		console.log(this.tagName[0]);
@@ -122,7 +122,10 @@ export class LandingMovielistComponent implements OnInit {
 	}
 
 	getMovieList() {
-		const uri = `/QuanLyPhim/LayDanhSachPhim?maNhom=${this.dataService.maNhom.value}`;
+		this.dataService.maNhom.subscribe((code) => {
+			this.groupCode = code;
+		});
+		const uri = `/QuanLyPhim/LayDanhSachPhim?maNhom=${this.groupCode}`;
 		let uriLength: any;
 		this.dataService.get(uri).subscribe((data) => {
 			this.dataService.openSpinner(true);

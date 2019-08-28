@@ -1,8 +1,55 @@
 
 <ng-container *ngIf="signUp; else LogInTemplate">
-    <div class="gridcol">
     <h5 class="m-0 p-0 mb-2">Đăng ký</h5>
     <!-- hintLabel="Max 15 ký tự"-->
+    <form [formGroup]="formSU" autocomplete="off" (ngSubmit)="signUpForm(formSU.value)" validate>
+        <mat-form-field>
+            <input matInput #user maxlength="15" placeholder="Username" formControlName="usernameForm" required>
+            <mat-hint align="end">{{user.value.length || 0}}/15</mat-hint>
+            <mat-error *ngIf="hasError('usernameForm', 'required')">
+                Bạn cần nhập tên tài khoản
+            </mat-error>
+            <mat-error *ngIf="hasError('usernameForm', 'minlength')">
+                Tên tài khoản phải có ít nhất 6 kí tự
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="emailForm" required>
+            <mat-error *ngIf="hasError('emailForm', 'required')">
+                Bạn cần nhập email
+            </mat-error>
+            <mat-error *ngIf="hasError('emailForm', 'email')">
+                Email không hợp lệ
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input #pass matInput minlength="6" maxlength="15" type="password" placeholder="Password" formControlName="passForm" required [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button class="btn_eye" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-hint align="end">{{pass.value.length || 0}}/15</mat-hint>
+            <mat-error *ngIf="hasError('passForm', 'required')">
+                Bạn cần nhập mật khẩu
+            </mat-error>
+            <mat-error *ngIf="hasError('passForm', 'minlength')">
+                Mật khẩu phải có ít nhất 6 kí tự
+            </mat-error>
+            <mat-error *ngIf="hasError('passForm', 'minlength')">
+                Mật khẩu không được có ký tự đặc biệt
+            </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Đăng nhập</button>
+        <a (click)="changeForm()">Bạn đã có tài khoản?</a>
+    </form>
+</ng-container>
+<ng-template #LogInTemplate>
+    <app-login></app-login>
+    <a (click)="changeForm()">Bạn chưa có tài khoản?</a>
+</ng-template>
+<!--<app-fb-btn></app-fb-btn>-->
+
+
+<!--
     <mat-form-field>
         <input name="taiKhoan" matInput #user maxlength="15" placeholder="Username" [formControl]="usernameForm" required>
         <mat-hint align="end">{{user.value.length || 0}}/15</mat-hint>
@@ -24,20 +71,4 @@
             {{getPassError()}}
         </mat-error>
     </mat-form-field>
-    <mat-form-field>
-        <input name="soDt" matInput placeholder="Phone number" [formControl]="SDTForm" required>
-        <mat-error *ngIf="SDTForm.invalid">{{getPhoneError()}}</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-        <input name="hoTen" matInput placeholder="Full name" [formControl]="HoTenForm" required>
-        <mat-error *ngIf="HoTenForm.invalid">{{getFullNameError()}}</mat-error>
-    </mat-form-field>
-    <button mat-raised-button color="primary">Đăng nhập</button>
-    <a (click)="changeForm()">Bạn đã có tài khoản?</a>
-    </div>
-</ng-container>
-<ng-template #LogInTemplate>
-    <app-login></app-login>
-    <a (click)="changeForm()">Bạn chưa có tài khoản?</a>
-</ng-template>
-<!--<app-fb-btn></app-fb-btn>-->
+-->

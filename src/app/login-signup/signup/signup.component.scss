@@ -1,4 +1,4 @@
-@import '../../../constants/color.scss';
+@import "src/constants/color.scss";
 .btn_eye {
 	position: absolute;
 	right: -8px;
@@ -8,11 +8,6 @@
 
 .material-icons {
 	font-size: 18px;
-}
-
-.gridcol {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
 }
 
 h5 {

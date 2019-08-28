@@ -1,4 +1,4 @@
-@import "../../../../constants/color.scss";
+@import "src/constants/color.scss";
 
 // Movie Gallery
 ::ng-deep .mat-tab-header {
@@ -84,9 +84,6 @@
 .slide {
 	width: 170px !important;
 	margin: 10px 10px;
-	.btn {
-		display: none;
-	}
 	h5 {
 		font-size: 18px !important;
 		margin: 0;

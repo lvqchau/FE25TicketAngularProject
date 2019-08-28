@@ -1,79 +1,84 @@
-import { Component, OnInit } from "@angular/core";
-import { FormControl, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
+import { QuanLyNguoiDungService } from 'src/app/_core/services/quan-ly-nguoi-dung.service';
+import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
 
+import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: "app-signup",
-  templateUrl: "./signup.component.html",
-  styleUrls: ["./signup.component.scss"],
+	selector: 'app-signup',
+	templateUrl: './signup.component.html',
+	styleUrls: [ './signup.component.scss' ]
 })
 export class SignupComponent implements OnInit {
-  constructor() { }
-  ngOnInit() { }
-  value = 'Đăng ký';
-  valuebool = 'đã';
-  signUp: boolean = true;
-  changeForm() {
-    this.signUp = !this.signUp;
-    if (this.signUp) {
-      this.value = "Đăng ký";
-      this.valuebool = "đã";
-    } else {
-      this.value = 'Đăng nhập';
-      this.valuebool = 'chưa';
-    }
-  }
+	constructor(
+		private dataService: QuanLyPhimService,
+		private userService: QuanLyNguoiDungService,
+		private router: Router
+	) {}
 
+	ngOnInit() {}
+	value = 'Đăng ký';
+	valuebool = 'đã';
+	signUp: boolean = true;
+	hide: boolean = true;
+	groupCode: string;
 
-  usernameForm = new FormControl("", [
-    Validators.required,
-    Validators.minLength(6)
-  ]);
+	userList: {
+		taiKhoan: string;
+		matKhau: string;
+		email: string;
+		hoTen: string;
+		soDT: string;
+	}[] = [];
 
-  emailForm = new FormControl("", [Validators.required, Validators.email]);
-  SDTForm = new FormControl("", [Validators.required]);
-  HoTenForm = new FormControl("", [Validators.required]);
-  PassForm = new FormControl("", [
-    Validators.required,
-    Validators.pattern("^[a-zA-Z0-9]{6,15}$"),
-    Validators.minLength(6)
-  ]);
-  hide:boolean = true;
+	changeForm() {
+		this.signUp = !this.signUp;
+		if (this.signUp) {
+			this.value = 'Đăng ký';
+			this.valuebool = 'đã';
+		} else {
+			this.value = 'Đăng nhập';
+			this.valuebool = 'chưa';
+		}
+	}
 
-  getErrorMessage() {
-    return this.emailForm.hasError("required")
-      ? "Bạn cần nhập email"
-      : this.emailForm.hasError("email")
-      ? "Email không hợp lệ"
-      : "";
-  }
-  getPassError() {
-    return this.PassForm.hasError("required")
-      ? "Bạn cần nhập mật khẩu"
-      : this.PassForm.hasError("minlength")
-      ? "Mật khẩu phải có ít nhất 6 kí tự"
-      : this.PassForm.hasError("pattern")
-      ? "Mật khẩu không được có ký tự đặc biệt"
-      : "";
-  }
-  getUserError() {
-    return this.usernameForm.hasError("required")
-      ? "Bạn cần nhập tên tài khoản"
-      : this.usernameForm.hasError("minlength")
-      ? "Tên tài khoản phải có ít nhất 6 kí tự"
-      : "";
-  }
-  getPhoneError() {
-    return this.SDTForm.hasError("required")
-      ? "Bạn cần nhập số điện thoại"
-        : "";
-  }
-  getFullNameError() {
-    return this.HoTenForm.hasError("required")
-      ? "Bạn cần nhập họ tên"
-      : "";
-  }
-  
+	formSU = new FormGroup({
+		usernameForm: new FormControl('', [ Validators.required, Validators.minLength(6) ]),
+		emailForm: new FormControl('', [ Validators.required, Validators.email ]),
+		passForm: new FormControl('', [
+			Validators.required,
+			Validators.pattern('^[a-zA-Z0-9]{6,15}$'),
+			Validators.minLength(6)
+		])
+	});
 
-  
+	hasError = (controlName: string, errorName: string) => {
+		return this.formSU.controls[controlName].hasError(errorName);
+	};
+
+	setGP() {
+		this.dataService.maNhom.subscribe((code) => {
+			this.groupCode = code;
+		});
+		return this.groupCode;
+	}
+
+	signUpForm(SUvalue) {
+		this.userList.push(SUvalue);
+		const user = {
+			taiKhoan: this.formSU.controls['usernameForm'].value,
+			matKhau: this.formSU.controls['passForm'].value,
+			email: this.formSU.controls['emailForm'].value,
+			soDt: '',
+			maNhom: this.setGP(),
+			maLoaiNguoiDung: 'KhachHang',
+			hoTen: ''
+		};
+		this.userService.registerUser(user).subscribe((data) => {
+			this.userService.setUser(user);
+			localStorage.clear();
+			this.router.navigate([ 'land' ]);
+		});
+	}
 }

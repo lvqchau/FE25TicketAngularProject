@@ -1,21 +1,24 @@
 
-
-<mat-form-field>
-    <input name="taiKhoan" matInput #user maxlength="15" placeholder="Username" [formControl]="usernameForm" required>
-    <mat-hint align="end">{{user.value.length || 0}}/15</mat-hint>
-    <mat-error *ngIf="usernameForm.invalid">
-    {{getUserError()}}
-    </mat-error>
-</mat-form-field>
-<mat-form-field>
-    <input name="matKhau" #pass matInput minlength="6" maxlength="15" type="password" placeholder="Password" [formControl]="PassForm" required [type]="hide ? 'password' : 'text'">
-    <button mat-icon-button class="btn_eye" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-    <mat-hint align="end">{{pass.value.length || 0}}/15</mat-hint>
-    <mat-error *ngIf="PassForm.invalid">
-        {{getPassError()}}
-    </mat-error>
-</mat-form-field>
-
+<h5 class="m-0 p-0 mb-2">Đăng nhập</h5>
+<form [formGroup]="formLI" autocomplete="off" (ngSubmit)="logInForm(formLI.value)" validate>
+    <mat-form-field>
+        <input formControlName="usernameForm" matInput #user maxlength="15" placeholder="Username" required>
+        <mat-hint align="end">{{user.value.length || 0}}/15</mat-hint>
+        <mat-error *ngIf="hasError('usernameForm', 'required')">
+            Bạn cần nhập tên tài khoản
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input formControlName="passForm" #pass matInput minlength="6" maxlength="15" type="password" placeholder="Password" required [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button class="btn_eye" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-hint align="end">{{pass.value.length || 0}}/15</mat-hint>
+        <mat-error *ngIf="hasError('passForm', 'required')">
+            Bạn cần nhập mật khẩu
+        </mat-error>
+    </mat-form-field>
+    <mat-checkbox formControlName="checkBoxValue">Remember me</mat-checkbox>
+    <button mat-raised-button color="primary">Đăng nhập</button>
+</form>
 <!--<app-fb-btn></app-fb-btn>-->
