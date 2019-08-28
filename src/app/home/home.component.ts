@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   }
   getSpinner() {
     setTimeout(() => {
-      this.dataService.showSpinner.subscribe(data => {
+      this.dataService.spinned.subscribe(data => {
         this.showSpinner = data;
       });
     }, 3000);

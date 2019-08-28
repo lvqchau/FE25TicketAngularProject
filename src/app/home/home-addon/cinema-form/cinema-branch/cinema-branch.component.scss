@@ -1,0 +1,80 @@
+@import "../../../../../color.scss";
+.nav__overflow {
+  height: 500px;
+  .nav {
+    padding: 10px;
+    height: 100%;
+    border-right: 1px solid $border;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-y: scroll !important;
+    .nav-link {
+      width: 100%;
+      background: $bg;
+      border-radius: 0;
+      border-bottom: 1px solid $border;
+      opacity: 0.5;
+      &.active,
+      &:hover {
+        opacity: 1;
+      }
+
+      .brand__branch {
+        width: 45px;
+        height: 45px;
+        margin-top: 5px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .branch__info {
+        flex-direction: column;
+        width: 150px;
+        p,
+        span {
+          font-size: 11px;
+          margin: 0;
+          color: $black-text;
+        }
+        .branch__name {
+          font-size: 13px;
+          line-height: 13px;
+          color: $purple-primary;
+          span {
+            font-size: 13px;
+          }
+        }
+        .branch__address {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .branch__more {
+          color: $orangered;
+          text-decoration: none;
+          font-size: 12px;
+          &:hover {
+            color: $purple-light;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tab-content {
+  height: 500px;
+  overflow-y: scroll;
+}
+.tab-content {
+  width: 610px;
+  overflow: hidden;
+  overflow-y: scroll;
+  
+  .branch__movie {
+    padding: 10px;
+  
+  }
+}

@@ -1,25 +1,43 @@
-<h5 class="m-0 p-0">Đăng ký</h5>
-<mat-form-field hintLabel="Max 15 ký tự">
-    <input matInput #user maxlength="15" placeholder="Username" [formControl]="usernameForm" required>
-    <mat-hint align="end">{{user.value.length || 0}}/15</mat-hint>
-    <mat-error *ngIf="usernameForm.invalid">
-      {{getUserError()}}
-    </mat-error>
-</mat-form-field>
-<mat-form-field>
-    <input matInput placeholder="Email" [formControl]="emailForm" required>
-    <mat-error *ngIf="emailForm.invalid">{{getErrorMessage()}}</mat-error>
-</mat-form-field>
-<mat-form-field>
-    <input #pass matInput minlength="6" maxlength="15" type="password" placeholder="Password" [formControl]="PassForm" required [type]="hide ? 'password' : 'text'">
-    <button mat-icon-button class="btn_eye" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-    <mat-hint align="end">{{pass.value.length || 0}}/15</mat-hint>
-    <mat-error *ngIf="PassForm.invalid">
-        {{getPassError()}}
-    </mat-error>
-</mat-form-field>
- 
+
+<ng-container *ngIf="signUp; else LogInTemplate">
+    <div class="gridcol">
+    <h5 class="m-0 p-0 mb-2">Đăng ký</h5>
+    <!-- hintLabel="Max 15 ký tự"-->
+    <mat-form-field>
+        <input name="taiKhoan" matInput #user maxlength="15" placeholder="Username" [formControl]="usernameForm" required>
+        <mat-hint align="end">{{user.value.length || 0}}/15</mat-hint>
+        <mat-error *ngIf="usernameForm.invalid">
+        {{getUserError()}}
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input name="email" matInput placeholder="Email" [formControl]="emailForm" required>
+        <mat-error *ngIf="emailForm.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input name="pass" #pass matInput minlength="6" maxlength="15" type="password" placeholder="Password" [formControl]="PassForm" required [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button class="btn_eye" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-hint align="end">{{pass.value.length || 0}}/15</mat-hint>
+        <mat-error *ngIf="PassForm.invalid">
+            {{getPassError()}}
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input name="soDt" matInput placeholder="Phone number" [formControl]="SDTForm" required>
+        <mat-error *ngIf="SDTForm.invalid">{{getPhoneError()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input name="hoTen" matInput placeholder="Full name" [formControl]="HoTenForm" required>
+        <mat-error *ngIf="HoTenForm.invalid">{{getFullNameError()}}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Đăng nhập</button>
+    <a (click)="changeForm()">Bạn đã có tài khoản?</a>
+    </div>
+</ng-container>
+<ng-template #LogInTemplate>
+    <app-login></app-login>
+    <a (click)="changeForm()">Bạn chưa có tài khoản?</a>
+</ng-template>
 <!--<app-fb-btn></app-fb-btn>-->
-<a routerLink="/dang-nhap" >Bạn đã có tài khoản?</a>

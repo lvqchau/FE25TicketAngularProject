@@ -27,7 +27,7 @@ export class LandingPageComponent implements OnInit {
     //   this.showSpinner = data;
     // });
     setTimeout(() => {
-      this.dataService.showSpinner.subscribe(data => {
+      this.dataService.spinned.subscribe(data => {
         this.showSpinner = data;
       });
       // if (this.showSpinner == false) {

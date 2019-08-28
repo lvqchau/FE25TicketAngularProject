@@ -18,14 +18,14 @@ export class QuanLyPhimService {
   public downloadURL = new BehaviorSubject<string>(
     "http://via.placeholder.com/350x150"
   );
+  public maNhom = new BehaviorSubject<string>("GP06");
 
   getImg(img: string) {
     this.downloadURL.next(img);
   }
 
-  openSpinner(spinner: boolean): boolean {
+  openSpinner(spinner: boolean) {
     this.showSpinner.next(spinner);
-    return spinner;
   }
 
   get(uri: string): Observable<any> {

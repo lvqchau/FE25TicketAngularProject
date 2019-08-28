@@ -10,7 +10,7 @@ const routes: Routes = [
     component: LoginSignupComponent,
     children: [
       {
-        path: "dang-ky",
+        path: "",
         component: SignupComponent
       },
       {

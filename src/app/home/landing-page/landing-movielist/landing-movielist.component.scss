@@ -1,211 +1,218 @@
 @import "../../../../color.scss";
 
 // Movie Gallery
-.movie__container {
-  .nav {
-    justify-content: center;
-    margin: 40px 0;
-    a.active {
-      font-weight: 600;
-      color: $white;
-      text-transform: uppercase;
-      border: 1px solid $purple-primary;
-      width: 200px;
-      background-color: $purple-primary;
-    }
-    a {
-      color: $black;
-      transition: all 0.3s;
-      width: 150px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $purple-primary;
-      background-color: $white;
-      &:hover {
-        font-weight: 600;
-      }
-    }
-    .current__movie {
-      a {
-        border-radius: 10px 0 0 10px;
-      }
-    }
-    .upcoming__movie {
-      a {
-        border-radius: 0 10px 10px 0;
-      }
-    }
-  }
+::ng-deep .mat-tab-header {
+	border: none !important;
 }
+::ng-deep .mat-tab-labels {
+	justify-content: center;
+	margin-bottom: 30px;
+}
+::ng-deep .mat-tab-label:first-child {
+	border-radius: 10px 0 0 10px;
+	border-right: 0px;
+}
+::ng-deep .mat-tab-label:last-child {
+	border-radius: 0 10px 10px 0;
+	border-left: 0px;
+}
+::ng-deep .mat-tab-label {
+	color: $black;
+	font-size: 16px;
+	opacity: 1 !important;
+	transition: all 0.3s;
+	min-width: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid $purple-primary;
+	background: $white;
+	transition: ease 0.5s !important;
+	font-family: "Grotesque";
+	height: unset !important;
+	padding: 8px !important;
+}
+::ng-deep .mat-tab-label-active {
+	font-weight: 600 !important;
+	color: $white;
+	text-transform: uppercase;
+	border: 1px solid $purple-primary;
+	min-width: 185px !important;
+	background: $purple-primary;
+	transition: 0.5s ease;
+}
+::ng-deep .mat-ink-bar {
+	display: none;
+}
+
 ::ng-deep .slick-next,
 ::ng-deep .slick-prev {
-  background-color: $yellow-primary !important;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  transition: all 0.4s;
-  opacity: 0.6;
-  ::ng-deep &:before {
-    font-family: "Linearicons-Free";
-    color: black;
-    transition: all 0.4s;
-  }
-  &:hover {
-    opacity: 1;
-  }
+	background-color: $yellow-primary !important;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	transition: all 0.4s;
+	opacity: 0.6;
+	::ng-deep &:before {
+		font-family: "Linearicons-Free";
+		color: black;
+		transition: all 0.4s;
+	}
+	&:hover {
+		opacity: 1;
+	}
 }
 ::ng-deep .slick-next {
-  right: -70px;
-  &:before {
-    content: "\e87a";
-    font-size: 30px;
-  }
+	right: -70px;
+	&:before {
+		content: "\e87a";
+		font-size: 30px;
+	}
 }
 ::ng-deep .slick-prev {
-  left: -70px;
-  &:before {
-    content: "\e879";
-    font-size: 30px;
-  }
+	left: -70px;
+	&:before {
+		content: "\e879";
+		font-size: 30px;
+	}
 }
 
 .carousel {
-  width: 760px;
-  margin: 0 auto;
+	width: 760px;
+	margin: 0 auto;
 }
 .slide {
-  width: 170px !important;
-  margin: 10px 10px;
-  .btn {
-    display: none;
-  }
-  h5 {
-    font-size: 18px !important;
-    margin: 0;
-    color: $black-text;
-  }
-  p {
-    font-size: 16px !important;
-    color: $black-text;
-  }
-  &:hover {
-    .movie__content {
-      .btn {
-        display: none;
-        @media screen and (min-width: 545px) {
-          display: block;
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-      h5,
-      p {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-    .movie__img {
-      .overlay {
-        height: 150%;
-        opacity: 0.9;
-        top: -25%;
-        left: -40%;
-        .lnr {
-          left: 53%;
-          top: 49%;
-          transform: translate(-50%, -50%) rotate(75deg);
-          font-size: 35px;
-        }
-      }
-    }
-  }
+	width: 170px !important;
+	margin: 10px 10px;
+	.btn {
+		display: none;
+	}
+	h5 {
+		font-size: 18px !important;
+		margin: 0;
+		color: $black-text;
+	}
+	p {
+		font-size: 16px !important;
+		color: $black-text;
+	}
+	&:hover {
+		.movie__content {
+			.btn {
+				display: none;
+				@media screen and (min-width: 545px) {
+					display: block;
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			h5,
+			p {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		.movie__img {
+			.overlay {
+				height: 150%;
+				opacity: 0.9;
+				top: -25%;
+				left: -40%;
+				.lnr {
+					left: 53%;
+					top: 49%;
+					transform: translate(-50%, -50%) rotate(75deg);
+					font-size: 35px;
+				}
+			}
+		}
+	}
 }
 .movie__content {
-  margin-top: 10px;
-  position: relative;
-  text-align: left;
-  .btn {
-    position: absolute;
-    transition: 0.3s;
-    opacity: 0;
-    visibility: hidden;
-    top: 0;
-    left: 0;
-    margin: 0;
-    border: 0;
-    width: 100%;
-    font-size: 16px;
-    @media screen and (min-width: 986px) {
-      font-size: 18px;
-    }
-    @media screen and (min-width: 868px) {
-      font-size: 17px;
-    }
-  }
-  h5,
-  p {
-    display: none;
-    @media screen and (min-width: 545px) {
-      display: block;
-      opacity: 1;
-      visibility: visible;
-    }
-    transition: 0.3s;
-  }
-  h5 {
-    font-size: 17px;
-    @media screen and (min-width: 986px) {
-      font-size: 18px;
-    }
-    line-height: 20px;
-    height: 40px;
-    font-weight: 600;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  p {
-    font-size: 14px;
-    @media screen and (min-width: 986px) {
-      font-size: 16px;
-    }
+	margin-top: 10px;
+	position: relative;
+	text-align: left;
+	.btn {
+		position: absolute;
+		transition: 0.3s;
+		opacity: 0;
+		visibility: hidden;
+		top: 0;
+		left: 0;
+		margin: 0;
+		border: 0;
+		width: 100%;
+		font-size: 16px;
+		@media screen and (min-width: 986px) {
+			font-size: 18px;
+		}
+		@media screen and (min-width: 868px) {
+			font-size: 17px;
+		}
+	}
+	h5,
+	p {
+		display: none;
+		@media screen and (min-width: 545px) {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+		}
+		transition: 0.3s;
+	}
+	h5 {
+		font-size: 17px;
+		@media screen and (min-width: 986px) {
+			font-size: 18px;
+		}
+		line-height: 20px;
+		height: 40px;
+		font-weight: 600;
+		width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	p {
+		font-size: 14px;
+		@media screen and (min-width: 986px) {
+			font-size: 16px;
+		}
 
-    margin: 0;
-  }
+		margin: 0;
+	}
 }
 .movie__img {
-  width: 170px;
-  border-radius: 12px;
-  overflow: hidden;
-  height: 220px;
-  position: relative;
-  img {
-    height: 220px;
-    width: 170px;
-  }
-  .overlay {
-    transition: 0.4s;
-    height: 150%;
-    width: 170%;
-    position: absolute;
-    top: 65%;
-    left: -140%;
-    transform: rotate(45deg);
-    background: $yellow-primary;
-    a {
-      color: $black;
-      .lnr {
-        font-size: 2vw;
-        @media screen and (min-width: 986px) {
-          font-size: 18px;
-        }
-        transition: 0.3s;
-        position: absolute;
-        left: 48%;
-        top: 2%;
-        transform: rotate(75deg);
-      }
-    }
-  }
+	width: 170px;
+	border-radius: 12px;
+	overflow: hidden;
+	height: 220px;
+	position: relative;
+	img {
+		height: 220px;
+		width: 170px;
+	}
+	.overlay {
+		transition: 0.4s;
+		height: 150%;
+		width: 170%;
+		position: absolute;
+		top: 65%;
+		left: -140%;
+		transform: rotate(45deg);
+		background: $yellow-primary;
+		a {
+			color: $black;
+			.lnr {
+				font-size: 2vw;
+				@media screen and (min-width: 986px) {
+					font-size: 18px;
+				}
+				transition: 0.3s;
+				position: absolute;
+				left: 48%;
+				top: 2%;
+				transform: rotate(75deg);
+			}
+		}
+	}
 }

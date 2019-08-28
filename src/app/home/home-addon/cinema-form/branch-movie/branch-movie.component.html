@@ -1,1 +1,39 @@
-<p>branch-movie works!</p>
+<!--id chứa 1 movie = tenChiNhanh_movie-{{sttMovie+1}}
+=> id = cgv-quang-trung_movie-1
+   id = cgv-quang-trung_movie-2 ...
+-->
+<ng-container *ngIf="unavailable">
+    <h5 style="text-align:center;">Rạm tạm thời chưa có lịch chiếu phim.</h5>
+</ng-container>
+<div class="branch__container pb-2 mb-2"  *ngFor="let item of movieListArr; let stt = index">  
+    <!--movie_detail-->
+    <div class="branch__movieinfo d-flex align-items-center" data-toggle="collapse" attr.data-target="#{{curCine}}_movie-{{stt+1}}" aria-expanded="true">
+        <img src="assets/img/movies/spider-man-nguoi-nhen-xa-nha-sm.jpg"/>
+        <div class="movieinfo__content ml-2">
+            <h3 class="movie__title m-0"><span class="age__restrict">C13</span>{{item.tenPhim}}</h3>
+            <div class="d-flex movie__ratings">
+                <p class="movie__timelength"><span>129</span> phút -</p>
+                <p class="movie__rate1">&nbsp;CyberPhim <span>8.9</span> -</p>    
+                <p class="movie__rate2">&nbsp;IMDb <span>7.9</span></p>    
+            </div>
+        </div>
+    </div>
+    <!--movie_schedule-->
+    <div class="collapse movie__schedule show mt-3" id="{{curCine}}_movie-{{stt+1}}">
+        <div class="d-flex">
+            <img src="assets/img/movies/2_0.png"/>
+            <div class="movie__time ml-4">
+                <a href="#">{{item.ngayChieuGioChieu | date: 'HH:mm'}}</a>
+                <a href="#">22:30</a>
+                <a href="#">22:30</a>
+                <a href="#">22:30</a>
+                <a href="#">22:30</a>
+                <a href="#">22:30</a>
+                <a href="#">22:30</a>
+                <a href="#">22:30</a>
+                <a href="#">22:30</a>
+            </div>
+        </div>
+    </div>
+
+    

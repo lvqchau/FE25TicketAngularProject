@@ -1,0 +1,60 @@
+@import "../../../../../color.scss";
+.branch__container {
+  border-bottom: 1px solid $border;
+
+  .branch__movieinfo {
+    cursor: pointer;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    h3 {
+      font-size: 19px;
+      font-weight: 600;
+    }
+    .movieinfo__content {
+      .movie__title {
+        color: $black-text;
+        .age__restrict {
+          padding: 0px 4px 2px;
+          border-radius: 3px;
+          font-size: 14px;
+          color: white;
+          background-color: $orangered;
+          margin-right: 5px;
+        }
+      }
+      .movie__ratings {
+        p {
+          color: gray;
+        }
+      }
+    }
+  }
+  .movie__schedule {
+    width: 100%;
+    img {
+      width: 30px;
+      height: 30px;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    .movie__time {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      width: 100%;
+      a {
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: 600;
+        color: $green;
+        width: fit-content;
+        // color: #12c25b;
+        &:hover {
+          color: $orangered;
+          // color: rgb(255, 217, 0);
+        }
+      }
+    }
+  }
+}

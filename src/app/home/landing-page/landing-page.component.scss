@@ -1,111 +1,134 @@
 @import "../../../color.scss";
 
+.ng-star-inserted {
+	width: unset;
+	height: unset;
+}
+
 #hideTemplate {
-  display: none;
+	display: none;
 }
 #hideTemplate.active {
-  display: block;
+	display: block;
 }
 .spinner {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.514);
-  top: 0;
-  left: 0;
-  z-index: 9999;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.514);
+	top: 0;
+	left: 0;
+	z-index: 9999;
 }
 // Ticker Form
 .cinema__ticketform {
-  position: relative;
-  height: 70px;
-  top: -30px;
-  margin: 0 auto;
-  width: 780px;
-  background: $white;
-  box-shadow: 0px 6px 20px -10px rgba(0, 0, 0, 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  .btn__container {
-    width: 100%;
-    height: 100%;
-    padding: 0 25px;
-    .cinema__btn {
-      margin: auto 0;
-      transition: all 0.3s;
-      &.order__ticket {
-        transition: all 0.7s;
-        background: rgb(255, 217, 0);
-        border-bottom-color: rgb(216, 165, 27);
-        color: $black;
-      }
-    }
-    .cinema__dropdown {
-      .dropdown-menu.show {
-        transform: translate(0px, 27px) !important;
-      }
-      padding: 0 !important;
-      .btn {
-        width: 95%;
-        text-align: left;
-        padding: 0;
-        font-size: 16px;
-        font-weight: 500;
-        transform: none;
-        .lnr {
-          color: $yellow-primary;
-        }
-        p {
-          font-size: 18px;
-          text-transform: none;
-          margin: 0;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
-        }
-      }
-      ul {
-        border-radius: 5px;
-        width: max-content;
-        margin: 0 !important;
-        top: 80% !important;
-        max-height: 350px;
-        overflow-y: scroll;
-        .dropdown__header {
-          padding: 0;
-          padding-left: 10px;
-          font-size: 15px;
-        }
-        p {
-          font-size: 16px;
-          background: none;
-          padding: 5px;
-          margin: 0;
-        }
-        li {
-          padding: 3px 5px;
-          a {
-            display: block;
-            font-size: 16px;
-            padding: 0 5px;
-          }
-          &:hover {
-            background: $yellow-primary;
-          }
-        }
-      }
-    }
-  }
+	position: relative;
+	height: 70px;
+	top: -30px;
+	margin: 0 auto;
+	width: 780px;
+	background: $white;
+	box-shadow: 0px 6px 20px -10px rgba(0, 0, 0, 0.75);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+	.btn__container {
+		width: 100%;
+		height: 100%;
+		padding: 0 25px;
+		.cinema__btn {
+			margin: auto 0;
+			transition: all 0.3s;
+			&.order__ticket {
+				transition: all 0.7s;
+				background: rgb(255, 217, 0);
+				border-bottom-color: rgb(216, 165, 27);
+				color: $black;
+			}
+		}
+		.cinema__dropdown {
+			.dropdown-menu.show {
+				transform: translate(0px, 27px) !important;
+			}
+			padding: 0 !important;
+			.btn {
+				width: 95%;
+				text-align: left;
+				padding: 0;
+				font-size: 16px;
+				font-weight: 500;
+				transform: none;
+				.lnr {
+					color: $yellow-primary;
+				}
+				p {
+					font-size: 18px;
+					text-transform: none;
+					margin: 0;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+				}
+			}
+			ul {
+				border-radius: 5px;
+				width: max-content;
+				margin: 0 !important;
+				top: 80% !important;
+				max-height: 350px;
+				overflow-y: scroll;
+				.dropdown__header {
+					padding: 0;
+					padding-left: 10px;
+					font-size: 15px;
+				}
+				p {
+					font-size: 16px;
+					background: none;
+					padding: 5px;
+					margin: 0;
+				}
+				li {
+					padding: 3px 5px;
+					a {
+						display: block;
+						font-size: 16px;
+						padding: 0 5px;
+					}
+					&:hover {
+						background: $yellow-primary;
+					}
+				}
+			}
+		}
+	}
 }
 
 // Cinema Form
 .cinema__cinemaform {
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  padding: 0 20px;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	padding: 0 20px;
+}
+
+h2 {
+	font-weight: 600;
+	display: inline-block;
+	position: relative;
+	margin-bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	&:after {
+		content: "";
+		position: absolute;
+		transition: all 0.4s;
+		width: 100%;
+		height: 3px;
+		border-radius: 10px;
+		background: $purple-gradient-light;
+	}
 }
 
 // Cinema News
@@ -114,24 +137,24 @@
 .landing__sub,
 .landing__ad,
 .landing__app {
-  display: block;
+	display: block;
 }
 .landing__sub {
-  width: 100%;
-  background: $purple-gradient;
+	width: 100%;
+	background: $purple-gradient;
 }
 
 //Ad
 .landing__ad {
-  padding: 30px 180px;
-  margin: 0 auto;
+	display: flex;
+	justify-content: center;
 }
 
 //App
 .landing__app {
-  width: 100%;
-  height: 500px;
-  background: url("../../../assets/img/app-bg.jpg") no-repeat center center;
-  background-size: cover;
-  position: relative;
+	width: 100%;
+	height: 500px;
+	background: url("../../../assets/img/app-bg.jpg") no-repeat center center;
+	background-size: cover;
+	position: relative;
 }

@@ -10,12 +10,12 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: "phim/:movieId",
-        loadChildren: () => MoviePageModule
-      },
-      {
         path: "land",
         loadChildren: () => LandingPageModule
+      },
+      {
+        path: "phim/:movieId",
+        loadChildren: () => MoviePageModule
       }
     ]
   }

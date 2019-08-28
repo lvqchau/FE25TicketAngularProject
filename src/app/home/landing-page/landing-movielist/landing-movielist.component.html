@@ -1,49 +1,33 @@
 <!-- BEGIN MOVIE -->
-<div class="movie__container">
-    <ul class="nav nav-pills">
-        <li class="nav-item current__movie">
-        <a class="nav-link active" data-toggle="pill" href="#now">Đang chiếu</a>
-        </li>
-        <li class="nav-item upcoming__movie">
-        <a class="nav-link" data-toggle="pill" href="#future">Sắp chiếu</a>
-        </li>
-    </ul>
 
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div class="tab-pane active" id="now">
-            <ngx-slick-carousel class="carousel" 
+<div class="movie__container">
+    <mat-tab-group  animationDuration="0ms">
+        <mat-tab label="Đang chiếu" (click)="callIdmb()">
+            <ng-template matTabContent>
+                <ngx-slick-carousel class="carousel" 
                 #slickModal="slick-carousel" 
                 [config]="slideMovieConfig">
                 <ng-container ngxSlickItem *ngFor="let movie of movieList">
                 <app-landing-movieitem [movie]="movie"></app-landing-movieitem>
                 </ng-container>
             </ngx-slick-carousel>
-        </div>
-        <div class="tab-pane fade" id="future">
-        <ngx-slick-carousel class="carousel" 
-            #slickModal="slick-carousel" 
-            [config]="slideMovieConfig">
-            <ng-container ngxSlickItem *ngFor="let movie of movieList">
-            <app-landing-movieitem [movie]="movie"></app-landing-movieitem>
-            </ng-container>
-        </ngx-slick-carousel>
-        </div>
-    </div>
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="Sắp chiếu" (click)="callIdmb()">
+            <ng-template matTabContent>
+                <ngx-slick-carousel class="carousel" 
+                    #slickModal="slick-carousel" 
+                    [config]="slideMovieConfig">
+                    <ng-container ngxSlickItem *ngFor="let movie of movieList">
+                    <app-landing-movieitem [movie]="movie"></app-landing-movieitem>
+                    </ng-container>
+                </ngx-slick-carousel>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
 </div>
 <!-- END MOVIE -->
 
 <script>
-(function(d,s,id){
-    var js,stags=d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {
-        return;
-    }
-    js=d.createElement(s);
-    js.id=id;
-    js.src="https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/js/rating.js";
-    stags.parentNode.insertBefore(js,stags);
-    
-})
-(document,"script","imdb-rating-api");
+
 </script>

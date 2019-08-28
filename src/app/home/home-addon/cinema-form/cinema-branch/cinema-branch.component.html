@@ -1,1 +1,35 @@
-<p>cinema-branch works!</p>
+<div class="nav__overflow d-flex">
+    <ul class="nav nav-pills d-flex">
+    <!--cinema-branches-holder-->
+    <!--curCine = 1-->
+    <!--sttBranch = [0, ..., n]-->
+    <!--id = "cine1_1" for bhd, id ="cine2_1" for the next cinebrand-->
+        <li class="nav-item" *ngFor="let item of branchArr; let stt = index">
+            <a class="nav-link d-flex p-0 py-1" data-toggle="pill" href="#content{{curCine+1}}_{{stt+1}}"
+            [ngClass]="{'active':stt=='0'}">
+                <div class="brand__branch mr-2">
+                    <img src="assets/img/cinema/{{item.maCumRap}}.jpg" onerror="this.src='assets/img/null-movie.png'"/>
+                </div>
+                <div class="branch__info">
+                    <!--<p class="branch__name">BHD Star Cineplex<span> - Vincom Quang Trung</span></p>-->
+                    <p class="branch__name">{{item.tenCumRap}}</p>
+                    <p class="branch__address">{{item.diaChi}}</p>
+                    <a class="branch__more" routerLink='/rap-chieu-phim/{{item.maCumRap}}'>[Chi tiết]</a>
+                </div>
+            </a>
+        </li>
+        
+    </ul>
+    <!--movies-time-holder-->
+    <!---->
+    <div class="tab-content">
+    <ng-container *ngFor="let branchitem of branchArr; let sttBranch = index">
+        <app-branch-movie class="tab-pane flex-column branch__movie" 
+            id="content{{curCine+1}}_{{sttBranch+1}}"
+            [ngClass]="(sttBranch=='0')?'active':'fade'"
+            [cineCode]="maRap" [curCine]="branchitem.maCumRap" [curBr]="sttBranch">    
+        </app-branch-movie>
+    </ng-container>
+        
+    </div>
+</div>  
