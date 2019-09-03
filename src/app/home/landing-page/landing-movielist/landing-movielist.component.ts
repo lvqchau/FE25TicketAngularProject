@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
 import { tap, catchError, delay } from 'rxjs/operators';
-import { Observable, throwError, BehaviorSubject } from 'rxjs';
+import { Observable, throwError, BehaviorSubject, Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-landing-movielist',
@@ -80,6 +80,7 @@ export class LandingMovielistComponent implements OnInit {
 			idmb: 'tt2379713'
 		}
 	];
+	private subListMovie = new Subscription();
 	constructor(private dataService: QuanLyPhimService, private http: HttpClient) {}
 
 	ngOnInit() {
@@ -127,7 +128,7 @@ export class LandingMovielistComponent implements OnInit {
 		});
 		const uri = `/QuanLyPhim/LayDanhSachPhim?maNhom=${this.groupCode}`;
 		let uriLength: any;
-		this.dataService.get(uri).subscribe((data) => {
+		this.subListMovie = this.dataService.get(uri).subscribe((data) => {
 			this.dataService.openSpinner(true);
 			this.movieList = data;
 			this.movieList.map((item) => {
@@ -144,5 +145,9 @@ export class LandingMovielistComponent implements OnInit {
 			console.log(this.movieList);
 		});
 		this.dataService.openSpinner(false);
+	}
+
+	ngOnDestroy() {
+		this.subListMovie.unsubscribe();
 	}
 }

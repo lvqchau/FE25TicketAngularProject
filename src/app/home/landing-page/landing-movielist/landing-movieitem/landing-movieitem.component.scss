@@ -72,19 +72,24 @@
 		left: -140%;
 		transform: rotate(45deg);
 		background: $yellow-primary;
-		a {
-			color: $black;
-			.lnr {
-				font-size: 2vw;
-				@media screen and (min-width: 986px) {
-					font-size: 18px;
-				}
-				transition: 0.3s;
-				position: absolute;
-				left: 48%;
-				top: 2%;
-				transform: rotate(75deg);
+	}
+	button {
+		position: absolute;
+		top: 48%;
+		left: 52%;
+		transform: translate(-50%, -50%);
+		color: $black;
+		outline: none;
+		.lnr {
+			font-size: 2vw;
+			@media screen and (min-width: 986px) {
+				font-size: 18px;
 			}
+			transition: 0.3s;
+			position: absolute;
+			left: 48%;
+			top: 2%;
+			transform: rotate(75deg);
 		}
 	}
 }
@@ -125,6 +130,10 @@
 				opacity: 0.9;
 				top: -25%;
 				left: -40%;
+			}
+			& .mat-button {
+				left: 53% !important;
+				top: 49% !important;
 				.lnr {
 					left: 53%;
 					top: 49%;

@@ -1,0 +1,32 @@
+@import "src/constants/color.scss";
+.movie__modal {
+	button {
+		transform: rotate(45deg);
+		position: absolute;
+		top: 0;
+		right: 0;
+		opacity: 1;
+		z-index: 2;
+		outline: none;
+		.lnr-plus {
+			color: white;
+			font-size: 35px;
+			text-shadow: none;
+		}
+	}
+	.modal-content {
+		background-color: transparent;
+		border: none;
+	}
+	.modal-body {
+		height: 45vw;
+		.ytVideo {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+	}
+	.blackBody {
+		background-color: black;
+	}
+}

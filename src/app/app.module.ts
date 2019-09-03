@@ -15,7 +15,6 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatSelectModule } from "@angular/material/select";
 import { SlickCarouselModule } from "ngx-slick-carousel";
 import { HttpClientModule } from "@angular/common/http";
-import { SpinnerComponent } from "./spinner/spinner.component";
 import { SpinnerModule } from "./spinner/spinner.module";
 
 @NgModule({
@@ -42,4 +41,4 @@ import { SpinnerModule } from "./spinner/spinner.module";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

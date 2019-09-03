@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { HomeAddonModule } from "./home-addon/home-addon.module";
 import { LandingPageModule } from "./landing-page/landing-page.module";
 import { CinemaPageModule } from "./cinema-page/cinema-page.module";
@@ -19,8 +20,9 @@ import { SpinnerModule } from "../spinner/spinner.module";
     NewsPageModule,
     HomeRoutingModule,
     SpinnerModule,
-    HomeAddonModule
+    HomeAddonModule,
+    SharedModule
   ],
   exports: [HomeComponent]
 })
-export class HomeModule {}
+export class HomeModule { }

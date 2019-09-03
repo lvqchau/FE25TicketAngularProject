@@ -1,0 +1,22 @@
+<ng-container>
+<!-- The Modal -->
+<div  class="modal movie__modal" id="vidModal"  data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 70vw;">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <button type="button" class="close" data-dismiss="modal" (click)="resetModal()">
+        <span class="lnr lnr-plus"></span>
+      </button>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <iframe class="ytVideo" [src]="modalBody | safeUrl" frameborder="0" autoplay="1">
+        </iframe>
+      </div>
+
+     
+    </div>
+  </div>
+</div>
+</ng-container>

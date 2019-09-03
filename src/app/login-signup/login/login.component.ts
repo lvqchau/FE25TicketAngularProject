@@ -1,7 +1,8 @@
+import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
 import { Router } from '@angular/router';
 import { QuanLyNguoiDungService } from 'src/app/_core/services/quan-ly-nguoi-dung.service';
-import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, Validators, FormGroup, NgForm } from '@angular/forms';
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
@@ -10,7 +11,14 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
 	hide: boolean = true;
 
-	constructor(private userService: QuanLyNguoiDungService, private router: Router) {}
+	// @ViewChild('foobarElement', { static: false })
+	// foobarElement: NgForm;
+
+	constructor(
+		private userService: QuanLyNguoiDungService,
+		private router: Router,
+		private dataService: QuanLyPhimService
+	) {}
 
 	ngOnInit() {}
 
@@ -30,7 +38,8 @@ export class LoginComponent implements OnInit {
 			taiKhoan: this.formLI.controls['usernameForm'].value,
 			matKhau: this.formLI.controls['passForm'].value
 		};
-		this.userService.userConfirm(user).subscribe((data) => {
+		const uri = 'QuanLyNguoiDung/DangNhap';
+		this.dataService.post(uri, user).subscribe((data) => {
 			this.userService.setUser(data);
 			if (checked == true) {
 				this.userService.setRemember(true);

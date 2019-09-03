@@ -75,7 +75,8 @@ export class SignupComponent implements OnInit {
 			maLoaiNguoiDung: 'KhachHang',
 			hoTen: ''
 		};
-		this.userService.registerUser(user).subscribe((data) => {
+		const uri = 'QuanLyNguoiDung/DangKy';
+		this.dataService.post(uri, user).subscribe((data) => {
 			this.userService.setUser(user);
 			localStorage.clear();
 			this.router.navigate([ 'land' ]);

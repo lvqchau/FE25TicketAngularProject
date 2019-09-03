@@ -6,10 +6,11 @@
         [routerLink]="['/phim/', movie.maPhim]"
         [queryParams]="{tenPhim: movie.biDanh}"
         >
-            <div class="overlay">
-                <a href="#"><span class="lnr lnr-play2"></span></a>
-            </div>
         </a>
+        <div class="overlay">
+            <button mat-button (click)="openDialog()"><span class="lnr lnr-play2"></span></button>
+        </div>
+        
     </div>
     <div class="movie__content">
         <h5>{{movie.tenPhim}}</h5>
@@ -23,3 +24,7 @@
         <button class="btn cinema__btn">MUA VÉ</button>
     </div>
 </div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#vidModal" (click)="setTrailer()">
+  Open modal
+</button>

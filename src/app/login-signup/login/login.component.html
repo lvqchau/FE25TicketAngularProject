@@ -1,6 +1,6 @@
 
 <h5 class="m-0 p-0 mb-2">Đăng nhập</h5>
-<form [formGroup]="formLI" autocomplete="off" (ngSubmit)="logInForm(formLI.value)" validate>
+<form [formGroup]="formLI"  autocomplete="off" (ngSubmit)="logInForm(formLI.value)" validate>
     <mat-form-field>
         <input formControlName="usernameForm" matInput #user maxlength="15" placeholder="Username" required>
         <mat-hint align="end">{{user.value.length || 0}}/15</mat-hint>
