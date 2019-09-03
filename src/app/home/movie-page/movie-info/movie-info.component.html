@@ -3,8 +3,9 @@
     <div class="movie__detail pl-2">
         <p>{{movieInfo.ngayKhoiChieu | date: 'dd.MM.yyyy'}}</p>
         <h4>{{movieInfo.tenPhim}}</h4>
-        <p>{{movieInfo.thoiLuong}} phút - IDMb 
-            <span class="text-white imdbRatingPlugin" data-user="ur106908509" [attr.data-title]="movieInfo.idmb" data-style="p4">
+        <p>{{movieInfo.thoiLuong}} phút 
+            <span>
+            - IDMb {{movieInfo.idmb}}
             </span>
         </p>
     </div>

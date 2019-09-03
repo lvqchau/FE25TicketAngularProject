@@ -73,25 +73,6 @@
 		transform: rotate(45deg);
 		background: $yellow-primary;
 	}
-	button {
-		position: absolute;
-		top: 48%;
-		left: 52%;
-		transform: translate(-50%, -50%);
-		color: $black;
-		outline: none;
-		.lnr {
-			font-size: 2vw;
-			@media screen and (min-width: 986px) {
-				font-size: 18px;
-			}
-			transition: 0.3s;
-			position: absolute;
-			left: 48%;
-			top: 2%;
-			transform: rotate(75deg);
-		}
-	}
 }
 .slide {
 	width: 170px !important;
@@ -131,16 +112,38 @@
 				top: -25%;
 				left: -40%;
 			}
-			& .mat-button {
+			.playBtn {
+				opacity: 1;
 				left: 53% !important;
 				top: 49% !important;
 				.lnr {
 					left: 53%;
 					top: 49%;
 					transform: translate(-50%, -50%) rotate(75deg);
-					font-size: 35px;
 				}
 			}
 		}
+	}
+}
+.playBtn {
+	opacity: 1;
+	position: absolute;
+	top: 44%;
+	left: 47%;
+	color: $black;
+	outline: none;
+	background: none;
+	border: none;
+	padding: 0;
+	.lnr {
+		font-size: 2vw;
+		@media screen and (min-width: 986px) {
+			font-size: 35px;
+		}
+		transition: 0.3s;
+		position: absolute;
+		left: 48%;
+		top: 2%;
+		transform: rotate(75deg);
 	}
 }

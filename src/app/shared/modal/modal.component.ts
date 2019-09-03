@@ -17,7 +17,7 @@ export class ModalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.modalBody = null;
+    this.modalBody = '';
     this.inputModalBody();
   }
 
@@ -28,7 +28,7 @@ export class ModalComponent implements OnInit {
   }
 
   resetModal() {
-    this.modalBody = null;
+    this.modalBody = '';
   }
 
   modalBodyUrl() {

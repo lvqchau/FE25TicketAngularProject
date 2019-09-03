@@ -16,7 +16,6 @@ export class LandingMovieitemComponent implements OnInit {
 
   setTrailer() {
     this.dataService.setModal(this.movie.trailer);
-    console.log(this.movie.trailer);
   }
 
 
