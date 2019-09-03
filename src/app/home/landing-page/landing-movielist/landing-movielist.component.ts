@@ -50,7 +50,7 @@ export class LandingMovielistComponent implements OnInit {
 			this.dataService.openSpinner(true);
 			this.movieList = data;
 			this.movieList.map((item) => {
-				uriLength = `QuanLyPhim/LayThongTinPhim?MaPhim=${item.maPhim}`;
+				uriLength = `/QuanLyPhim/LayThongTinPhim?MaPhim=${item.maPhim}`;
 				this.dataService.get(uriLength).subscribe((data2) => {
 					item.thoiLuong = data2.lichChieu[0].thoiLuong;
 				});

@@ -6,7 +6,7 @@ import { FormControl, Validators, FormGroup, NgForm } from '@angular/forms';
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
-	styleUrls: [ './login.component.scss' ]
+	styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 	hide: boolean = true;
@@ -18,9 +18,11 @@ export class LoginComponent implements OnInit {
 		private userService: QuanLyNguoiDungService,
 		private router: Router,
 		private dataService: QuanLyPhimService
-	) {}
+	) { }
 
-	ngOnInit() {}
+	ngOnInit() {
+
+	}
 
 	formLI = new FormGroup({
 		usernameForm: new FormControl('', Validators.required),
@@ -40,14 +42,20 @@ export class LoginComponent implements OnInit {
 		};
 		const uri = 'QuanLyNguoiDung/DangNhap';
 		this.dataService.post(uri, user).subscribe((data) => {
+			const curUser = {
+				taiKhoan: data.taiKhoan,
+				matKhau: data.matKhau,
+				email: data.email,
+				maNhom: data.maNhom,
+				maLoaiNguoiDung: data.maLoaiNguoiDung
+			}
 			this.userService.setUser(data);
 			if (checked == true) {
 				this.userService.setRemember(true);
-				localStorage.setItem('user_profile', JSON.stringify(data));
-			} else {
-				localStorage.clear();
+				localStorage.setItem('info', JSON.stringify(curUser));
+				document.cookie = 'token = ' + data.accessToken;
 			}
-			this.router.navigate([ 'land' ]);
+			this.router.navigate(['land']);
 		});
 	}
 }

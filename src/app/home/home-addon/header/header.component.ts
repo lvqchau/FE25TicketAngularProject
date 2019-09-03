@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',
-	styleUrls: [ './header.component.scss' ]
+	styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 	username: string;
@@ -15,8 +15,13 @@ export class HeaderComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		if (localStorage.getItem('user_profile')) {
-			this.username = JSON.parse(localStorage.getItem('user_profile')).taiKhoan;
+		if (localStorage.getItem('info')) {
+			this.username = JSON.parse(localStorage.getItem('info')).taiKhoan;
 		}
+	}
+
+	resetStorage() {
+		localStorage.clear();
+		document.cookie.split(";").forEach(function (c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
 	}
 }

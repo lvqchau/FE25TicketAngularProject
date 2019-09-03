@@ -82,7 +82,6 @@ export class QuanLyPhimService {
 	];
 	private IDMbArr = new BehaviorSubject<Array<any>>([]);
 	public IDMbObserver = this.IDMbArr.asObservable();
-
 	constructor(private http: HttpClient) {
 		urlApi = environment.urlApi;
 	}
