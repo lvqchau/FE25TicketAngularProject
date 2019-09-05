@@ -1,8 +1,5 @@
-import { QuanLyNguoiDungService } from 'src/app/_core/services/quan-ly-nguoi-dung.service';
-import { QuanLyPhimService } from "src/app/_core/services/quan-ly-phim.service";
+import { QuanLyNguoiDungService } from 'src/app/shared/services/quan-ly-nguoi-dung.service';
 import { Component, Input, ViewEncapsulation, OnInit } from "@angular/core";
-import $ from "jquery";
-declare var FB: any;
 
 @Component({
   selector: "app-root",

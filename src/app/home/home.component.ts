@@ -1,14 +1,14 @@
-import { QuanLyPhimService } from './../_core/services/quan-ly-phim.service';
+import { QuanLyPhimService } from './../shared/services/quan-ly-phim.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
-	styleUrls: [ './home.component.scss' ]
+	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-	constructor(public dataService: QuanLyPhimService) {}
+	constructor(public dataService: QuanLyPhimService) { }
 	showSpinner: boolean = true;
 
 	private subSpinner = new Subscription();

@@ -1,15 +1,10 @@
-import { LandingMovielistComponent } from "./landing-movielist/landing-movielist.component";
-import { Observable } from "rxjs";
-import { delay } from "rxjs/operators";
-import { QuanLyPhimService } from "./../../_core/services/quan-ly-phim.service";
+import { QuanLyPhimService } from "./../../shared/services/quan-ly-phim.service";
 import {
   Component,
   Input,
   ViewEncapsulation,
   OnInit,
-  ViewChild
 } from "@angular/core";
-import $ from "jquery";
 import { timer } from "rxjs";
 
 @Component({
@@ -19,7 +14,7 @@ import { timer } from "rxjs";
   encapsulation: ViewEncapsulation.None
 })
 export class LandingPageComponent implements OnInit {
-  constructor(public dataService: QuanLyPhimService) {}
+  constructor(public dataService: QuanLyPhimService) { }
   showSpinner: boolean = true;
 
   getSpinner() {

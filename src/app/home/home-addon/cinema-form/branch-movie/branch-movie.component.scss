@@ -1,4 +1,8 @@
 @import "src/constants/color.scss";
+.ng-star-inserted {
+	width: unset;
+	height: unset;
+}
 .branch__container {
 	border-bottom: 1px solid $border;
 

@@ -1,4 +1,4 @@
-import { QuanLyNguoiDungService } from 'src/app/_core/services/quan-ly-nguoi-dung.service';
+import { QuanLyNguoiDungService } from 'src/app/shared/services/quan-ly-nguoi-dung.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

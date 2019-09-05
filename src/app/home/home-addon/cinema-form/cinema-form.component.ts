@@ -1,14 +1,14 @@
-import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
+import { QuanLyPhimService } from 'src/app/shared/services/quan-ly-phim.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-cinema-form',
 	templateUrl: './cinema-form.component.html',
-	styleUrls: [ './cinema-form.component.scss' ]
+	styleUrls: ['./cinema-form.component.scss']
 })
 export class CinemaFormComponent implements OnInit {
-	constructor(private dataService: QuanLyPhimService) {}
+	constructor(private dataService: QuanLyPhimService) { }
 
 	cineArr = [];
 	private subSchedule = new Subscription();

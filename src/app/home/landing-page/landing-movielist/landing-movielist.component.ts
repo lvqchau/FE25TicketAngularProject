@@ -1,8 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
-import { tap, catchError, delay } from 'rxjs/operators';
-import { Observable, throwError, BehaviorSubject, Subscription } from 'rxjs';
+import { QuanLyPhimService } from 'src/app/shared/services/quan-ly-phim.service';
+import { throwError, Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-landing-movielist',

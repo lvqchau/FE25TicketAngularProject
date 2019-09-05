@@ -1,4 +1,3 @@
-import { SharedModule } from './../shared/shared.module';
 import { HomeAddonModule } from "./home-addon/home-addon.module";
 import { LandingPageModule } from "./landing-page/landing-page.module";
 import { CinemaPageModule } from "./cinema-page/cinema-page.module";
@@ -9,6 +8,7 @@ import { MoviePageModule } from "./movie-page/movie-page.module";
 import { NewsPageModule } from "./news-page/news-page.module";
 import { HomeRoutingModule } from "./home-routing.module";
 import { SpinnerModule } from "../spinner/spinner.module";
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [HomeComponent],

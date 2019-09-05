@@ -2,7 +2,7 @@ import { ImgHolderDirective } from './../img-holder.directive';
 import { SpinnerModule } from './../../spinner/spinner.module';
 import { LandingRoutingModule } from './landing-page-routing.module';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from './../../_core/material/material.module';
+import { MaterialModule } from './../../shared/material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './landing-page.component';
@@ -47,4 +47,4 @@ import { HomeAddonModule } from '../home-addon/home-addon.module';
 		AppDisplayComponent
 	]
 })
-export class LandingPageModule {}
+export class LandingPageModule { }

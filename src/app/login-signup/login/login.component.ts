@@ -1,6 +1,6 @@
-import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
+import { QuanLyPhimService } from 'src/app/shared/services/quan-ly-phim.service';
 import { Router } from '@angular/router';
-import { QuanLyNguoiDungService } from 'src/app/_core/services/quan-ly-nguoi-dung.service';
+import { QuanLyNguoiDungService } from 'src/app/shared/services/quan-ly-nguoi-dung.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators, FormGroup, NgForm } from '@angular/forms';
 @Component({

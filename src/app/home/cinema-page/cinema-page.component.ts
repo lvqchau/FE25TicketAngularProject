@@ -1,4 +1,4 @@
-import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
+import { QuanLyPhimService } from 'src/app/shared/services/quan-ly-phim.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,7 +14,7 @@ export class CinemaPageComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private dataService: QuanLyPhimService
   ) { }
-  
+
   branchId: any;
   branchCode: any;
   branchArr: any = [];
@@ -30,10 +30,10 @@ export class CinemaPageComponent implements OnInit {
   findBranchCode() {
     const maRap = this.branchId.split('-')[0];
     switch (maRap) {
-      case 'bhd': return "BHDStar"; 
-      case 'cgv': return "CGV"; 
+      case 'bhd': return "BHDStar";
+      case 'cgv': return "CGV";
       case 'cns': return "CineStar";
-      case 'glx': return "Galaxy"; 
+      case 'glx': return "Galaxy";
       case 'lotte': return "LotteCinima";
       case 'megags': return "MegaGS";
       default: return '';
@@ -41,7 +41,7 @@ export class CinemaPageComponent implements OnInit {
   }
 
   getBranchInfo() {
-    let uriCode: string = this.findBranchCode();    
+    let uriCode: string = this.findBranchCode();
     const uri = `QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${uriCode}`;
     this.dataService.get(uri).subscribe(data => {
       data.map(item => {

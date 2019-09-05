@@ -1,4 +1,8 @@
 @import "src/constants/color.scss";
+.ng-star-inserted {
+	width: unset;
+	height: unset;
+}
 .nav__overflow {
 	height: 500px;
 	.nav {

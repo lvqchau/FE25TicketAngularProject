@@ -1,17 +1,16 @@
-import { PipeModule } from './../_core/pipe/pipe.module';
+import { PipeModule } from './pipe/pipe.module';
+import { ModalComponent } from './modal/modal.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedComponent } from './shared.component';
-import { ModalComponent } from './modal/modal.component';
+
+
 
 @NgModule({
-  declarations: [SharedComponent, ModalComponent],
+  declarations: [ModalComponent],
   imports: [
     CommonModule,
     PipeModule
   ],
-  exports: [
-    SharedComponent, ModalComponent
-  ]
+  exports: [ModalComponent]
 })
 export class SharedModule { }

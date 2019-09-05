@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
+import { QuanLyPhimService } from 'src/app/shared/services/quan-ly-phim.service';
 
 @Component({
   selector: 'app-cinema-branch',

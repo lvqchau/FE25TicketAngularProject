@@ -1,4 +1,4 @@
-import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
+import { QuanLyPhimService } from 'src/app/shared/services/quan-ly-phim.service';
 import { Component, OnInit, Input, Inject } from "@angular/core";
 
 @Component({

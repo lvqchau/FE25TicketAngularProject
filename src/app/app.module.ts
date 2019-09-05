@@ -1,5 +1,5 @@
 import { LoginSignupModule } from "./login-signup/login-signup.module";
-import { MaterialModule } from "./_core/material/material.module";
+import { MaterialModule } from "./shared/material/material.module";
 import { CheckoutModule } from "./checkout/checkout.module";
 import { HomeModule } from "./home/home.module";
 import { BrowserModule } from "@angular/platform-browser";

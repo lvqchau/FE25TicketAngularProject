@@ -1,13 +1,13 @@
-import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
+import { QuanLyPhimService } from 'src/app/shared/services/quan-ly-phim.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-branch-movie',
 	templateUrl: './branch-movie.component.html',
-	styleUrls: [ './branch-movie.component.scss' ]
+	styleUrls: ['./branch-movie.component.scss']
 })
 export class BranchMovieComponent implements OnInit {
-	constructor(private dataService: QuanLyPhimService) {}
+	constructor(private dataService: QuanLyPhimService) { }
 	@Input() curCine; //const cineID = bhd-cineplex-quang-trung
 	@Input() cineCode; //passed in through cinema-form => bhdStar
 	@Input() curBr; //cns-hai-ba-trung => const code = 0
@@ -54,7 +54,7 @@ export class BranchMovieComponent implements OnInit {
 			if (this.movieListArr === undefined || this.movieListArr.length === 0) {
 				this.unavailable = true;
 			} else {
-				this.movieListArr.map((item) => {});
+				this.movieListArr.map((item) => { });
 			}
 		});
 	}

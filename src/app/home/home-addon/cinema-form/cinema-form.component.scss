@@ -1,6 +1,9 @@
 @import "src/constants/color.scss";
 // Cinema Form
-
+.ng-star-inserted {
+	width: unset;
+	height: unset;
+}
 .cinemaform__container {
 	background: $bg;
 	border-radius: 12px;
@@ -43,11 +46,11 @@
 			}
 		}
 	}
-	.tab-content {
-		height: 500px;
-		& > .active {
-			display: flex;
-			flex-direction: row;
-		}
+}
+.tab-content {
+	height: 500px;
+	& > .active {
+		display: flex;
+		flex-direction: row;
 	}
 }

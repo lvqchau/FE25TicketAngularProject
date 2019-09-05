@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
-import { QuanLyNguoiDungService } from 'src/app/_core/services/quan-ly-nguoi-dung.service';
-import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
+import { QuanLyNguoiDungService } from 'src/app/shared/services/quan-ly-nguoi-dung.service';
+import { QuanLyPhimService } from 'src/app/shared/services/quan-ly-phim.service';
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
@@ -8,16 +8,16 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 @Component({
 	selector: 'app-signup',
 	templateUrl: './signup.component.html',
-	styleUrls: [ './signup.component.scss' ]
+	styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
 	constructor(
 		private dataService: QuanLyPhimService,
 		private userService: QuanLyNguoiDungService,
 		private router: Router
-	) {}
+	) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 	value = 'Đăng ký';
 	valuebool = 'đã';
 	signUp: boolean = true;
@@ -44,8 +44,8 @@ export class SignupComponent implements OnInit {
 	}
 
 	formSU = new FormGroup({
-		usernameForm: new FormControl('', [ Validators.required, Validators.minLength(6) ]),
-		emailForm: new FormControl('', [ Validators.required, Validators.email ]),
+		usernameForm: new FormControl('', [Validators.required, Validators.minLength(6)]),
+		emailForm: new FormControl('', [Validators.required, Validators.email]),
 		passForm: new FormControl('', [
 			Validators.required,
 			Validators.pattern('^[a-zA-Z0-9]{6,15}$'),
@@ -79,7 +79,7 @@ export class SignupComponent implements OnInit {
 		this.dataService.post(uri, user).subscribe((data) => {
 			this.userService.setUser(user);
 			localStorage.clear();
-			this.router.navigate([ 'land' ]);
+			this.router.navigate(['land']);
 		});
 	}
 }

@@ -2,16 +2,14 @@
     <div class="movie__img">
         <img [appImgHolder]="movie.hinhAnh" onerror="this.src='assets/img/null-movie.png'">
         
-        <a 
-        [routerLink]="['/phim/', movie.maPhim]"
-        [queryParams]="{tenPhim: movie.biDanh}"
-        >
         <div class="overlay">
+            <button class="playBtn" type="button" data-toggle="modal" data-target="#vidModal" (click)="setTrailer()">
+                <span class="lnr lnr-play2"></span>
+            </button>
+            <a [routerLink]="['/phim/', movie.maPhim]" [queryParams]="{tenPhim: movie.biDanh}">
+                <span class="lnr lnr-play2"></span>
+            </a>
         </div>
-        </a>
-        <button class="playBtn" type="button" data-toggle="modal" data-target="#vidModal" (click)="setTrailer()">
-            <span class="lnr lnr-play2"></span>
-        </button>
         
     </div>
     <div class="movie__content">

@@ -1,0 +1,46 @@
+@import "./color.scss";
+::ng-deep .mat-tab-header {
+	border: none !important;
+}
+::ng-deep .mat-tab-labels {
+	justify-content: center;
+	margin-bottom: 30px;
+}
+::ng-deep .mat-tab-label:first-child {
+	border-radius: 10px 0 0 10px;
+	border-right: 0px;
+}
+::ng-deep .mat-tab-label:last-child {
+	border-radius: 0 10px 10px 0;
+	border-left: 0px;
+}
+::ng-deep .mat-tab-label {
+	color: $black;
+	font-size: 16px;
+	opacity: 1 !important;
+	transition: all 0.3s;
+	min-width: 150px;
+	width: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid $purple-primary;
+	background: $white;
+	transition: ease 0.5s !important;
+	font-family: "Grotesque";
+	height: unset !important;
+	padding: 8px !important;
+}
+::ng-deep .mat-tab-label-active {
+	font-weight: 600 !important;
+	color: $white;
+	text-transform: uppercase;
+	border: 1px solid $purple-primary;
+	min-width: 185px !important;
+	width: 185px !important;
+	background: $purple-primary;
+	transition: 0.5s ease;
+}
+::ng-deep .mat-ink-bar {
+	display: none;
+}

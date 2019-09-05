@@ -1,8 +1,5 @@
-import { QuanLyPhimService } from 'src/app/_core/services/quan-ly-phim.service';
-import { Component, OnInit, SecurityContext } from '@angular/core';
-import { Pipe, PipeTransform } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
-
+import { Component, OnInit } from '@angular/core';
+import { QuanLyPhimService } from '../services/quan-ly-phim.service';
 
 @Component({
   selector: 'app-modal',
@@ -12,8 +9,7 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 export class ModalComponent implements OnInit {
   modalBody: any;
   constructor(
-    private dataService: QuanLyPhimService,
-    public sanitizer: DomSanitizer
+    private dataService: QuanLyPhimService
   ) { }
 
   ngOnInit() {
@@ -30,10 +26,5 @@ export class ModalComponent implements OnInit {
   resetModal() {
     this.modalBody = '';
   }
-
-  modalBodyUrl() {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.modalBody);
-  }
-
 
 }

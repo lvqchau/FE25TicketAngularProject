@@ -1,0 +1,9 @@
+@import "src/constants/nav_tab.scss";
+@import "src/constants/color.scss";
+
+.movie__detail {
+	h3,
+	h5 {
+		color: $yellow-primary;
+	}
+}
